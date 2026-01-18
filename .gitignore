@@ -1,1 +1,9 @@
-backend/.env
+app/.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.vscode/
+data/embeddings/*
+data/raw/*
