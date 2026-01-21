@@ -89,12 +89,9 @@ websocket-client==1.9.0
 websockets==16.0
 zipp==3.23.0
 sentence-transformers==2.7.0
-# Note: faiss-cpu doesn't support Python 3.13 yet - use Python 3.12
-# If you must use Python 3.13, consider using an alternative vector DB or building from source
-faiss-cpu==1.8.0.post1
+faiss-cpu>=1.7.0
 pypdf==5.1.0
 python-multipart==0.0.12
-email-validator==2.3.0
 email-validator==2.2.0
 pydantic-settings==2.7.1
 slowapi==0.1.9

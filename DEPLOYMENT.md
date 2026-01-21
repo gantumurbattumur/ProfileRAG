@@ -112,10 +112,10 @@ IONOS is great for the **domain name** ($1/year for ganabattumur.com), but use R
 
 After deploying to Render, configure these DNS records:
 
-| Type | Host | Value |
-|------|------|-------|
-| A | @ | (Render IP - get from dashboard) |
-| CNAME | www | profilerag-frontend.onrender.com |
+| Type  | Host | Value                            |
+| ----- | ---- | -------------------------------- |
+| A     | @    | (Render IP - get from dashboard) |
+| CNAME | www  | profilerag-frontend.onrender.com |
 
 ---
 
