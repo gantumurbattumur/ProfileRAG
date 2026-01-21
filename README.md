@@ -1,131 +1,46 @@
 # ProfileRAG
 
-A RAG (Retrieval-Augmented Generation) system trained on personal documents to provide chat-style answers about your background, skills, and experience. Perfect for showcasing your profile to recruiters.
+An AI-powered portfolio that lets visitors ask questions about me through a chat interface. Built to demonstrate my skills in RAG systems, full-stack development, and LLM integration.
 
-## Features
+## Why I Built This
 
-- 🤖 Chat interface to interact with your personal documents
-- 📄 Supports both PDF and Markdown documents
-- 🔍 Semantic search using sentence transformers and FAISS
-- 💬 Conversation history support
-- 🎨 Modern, responsive UI with dark mode
+Traditional portfolios are static—visitors have to hunt through sections to find what they're looking for. I wanted something different: **a portfolio that talks back**.
 
-## Setup
+Instead of making recruiters scroll through pages, they can simply ask:
+- "What are Gana's strongest technical skills?"
+- "Tell me about his AI projects"
+- "Is he open to relocation?"
 
-### 1. Install Dependencies
+The system retrieves relevant information from my resume and documents, then generates natural conversational answers using GPT.
 
-**Using uv (recommended):**
-```bash
-# Create/update venv
-uv venv .venv
+## What This Demonstrates
 
-# Activate venv
-source .venv/bin/activate
+**RAG (Retrieval-Augmented Generation)**
+- Document ingestion and chunking pipeline
+- Semantic search using sentence-transformers and FAISS
+- Context-aware response generation with conversation history
 
-# Install dependencies
-uv pip install -r requirements.txt
-```
+**Full-Stack Development**
+- FastAPI backend with async endpoints
+- React frontend with warm, minimal UI design
+- Real-time chat interface
 
-**Or using standard pip:**
-```bash
-pip install -r requirements.txt
-```
+**Production Practices**
+- Input sanitization and rate limiting
+- Environment-based configuration
+- Structured logging and error handling
 
-### 2. Environment Configuration
+## Tech Stack
 
-Create a `.env` file in the root directory:
+- **Backend**: Python, FastAPI, LangChain, FAISS, Sentence-Transformers
+- **Frontend**: React, Vite, Tailwind CSS
+- **AI**: OpenAI GPT-3.5, RAG pipeline
+- **Other**: Docker-ready, pytest for testing
 
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-MODEL_NAME=gpt-3.5-turbo
-EMBEDDING_MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
-```
+## Live Demo
 
-### 3. Prepare Documents
+[Coming soon]
 
-Place your documents (PDFs or Markdown files) in the `data/raw/` directory.
+---
 
-### 4. Ingest Documents
-
-Run the ingestion script to process your documents and create the embeddings index:
-
-```bash
-python scripts/ingest_docs.py
-```
-
-Or directly:
-
-```bash
-python -m app.rag.ingest
-```
-
-### 5. Start the Backend
-
-```bash
-uvicorn app.main:app --reload
-```
-
-The API will be available at `http://127.0.0.1:8000`
-
-### 6. Start the Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-The frontend will be available at `http://localhost:5173`
-
-## Usage
-
-1. Open the frontend in your browser
-2. Ask questions about your background, skills, experience, or projects
-3. Click action cards for quick queries (Me, Projects, Skills, Experience, Contact)
-4. The system will retrieve relevant information from your documents and generate contextual answers
-
-## Project Structure
-
-```
-ProfileRAG/
-├── app/
-│   ├── api/          # FastAPI endpoints
-│   ├── core/         # Configuration and utilities
-│   ├── llm/          # LLM client abstraction
-│   ├── rag/          # RAG components (ingest, retriever, embeddings)
-│   └── main.py       # FastAPI application
-├── data/
-│   ├── raw/          # Place your documents here
-│   └── embeddings/   # Generated FAISS index and metadata
-├── frontend/         # React frontend
-└── scripts/          # Utility scripts
-```
-
-## API Endpoints
-
-- `GET /` - Health check
-- `POST /chat` - Send a chat message
-
-### Chat Request
-
-```json
-{
-  "query": "What are your technical skills?",
-  "conversation_history": []
-}
-```
-
-### Chat Response
-
-```json
-{
-  "answer": "Based on my documents...",
-  "sources": ["resume.pdf", "test_doc.md"]
-}
-```
-
-## Notes
-
-- Make sure to run the ingestion script after adding new documents
-- The embedding model will be downloaded on first use
-- Conversation history is maintained in the frontend for context
+Built by [Gana Battumur](https://linkedin.com/in/gantumur-battumur/)
