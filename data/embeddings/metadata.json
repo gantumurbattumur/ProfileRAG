@@ -1,0 +1,730 @@
+[
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you legally authorized to work in the United States?\nA: Yes, I am legally authorized to work in the United States.",
+    "id": "work_auth_01",
+    "category": "work_authorization",
+    "topic": "legal_status",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Will you now or in the future require sponsorship for employment visa status?\nA: No, I do not require sponsorship for employment visa status.",
+    "id": "work_auth_02",
+    "category": "work_authorization",
+    "topic": "sponsorship",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What is your current immigration or work authorization status?\nA: I am on F-1 Visa STEM OPT.",
+    "id": "work_auth_03",
+    "category": "work_authorization",
+    "topic": "visa_status",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you at least 18 years of age?\nA: Yes, I am at least 18 years of age.",
+    "id": "personal_01",
+    "category": "personal",
+    "topic": "age",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: How old are you?\nA: I am 22 years old. I graduated recently and am excited to start my career as a software engineer!",
+    "id": "personal_02",
+    "category": "personal",
+    "topic": "age",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What is your age?\nA: I am 22 years old. I just graduated and am eager to contribute my skills to an innovative team!",
+    "id": "personal_03",
+    "category": "personal",
+    "topic": "age",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What is your current state of residence?\nA: I currently reside in Washington State.",
+    "id": "location_01",
+    "category": "personal",
+    "topic": "location",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to work onsite, hybrid, or remotely?\nA: Yes, I am willing to work onsite, hybrid, or remotely within the United States.",
+    "id": "location_02",
+    "category": "work_preferences",
+    "topic": "work_location",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to relocate within the United States?\nA: Yes, I am willing to relocate within the United States if required for the role.",
+    "id": "location_03",
+    "category": "work_preferences",
+    "topic": "relocation",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What is your earliest available start date?\nA: My earliest available start date is February 15, 2026.",
+    "id": "availability_01",
+    "category": "availability",
+    "topic": "start_date",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you applying for full-time, part-time, or contract employment?\nA: I am applying for full-time employment, but I am open to any positions.",
+    "id": "availability_02",
+    "category": "availability",
+    "topic": "employment_type",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you currently employed?\nA: No, I am not currently employed.",
+    "id": "availability_03",
+    "category": "availability",
+    "topic": "current_status",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What is your required notice period?\nA: No notice period is needed. I can start immediately.",
+    "id": "availability_04",
+    "category": "availability",
+    "topic": "notice_period",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to work overtime or flexible hours?\nA: Yes, I am willing to work overtime or flexible hours if business needs require it.",
+    "id": "flexibility_01",
+    "category": "work_preferences",
+    "topic": "flexibility",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you open to working in different time zones?\nA: Yes, I am open to working in different time zones if the role supports distributed teams.",
+    "id": "flexibility_02",
+    "category": "work_preferences",
+    "topic": "timezone",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to travel for work?\nA: Yes, I am willing to travel occasionally for work if required.",
+    "id": "travel_01",
+    "category": "work_preferences",
+    "topic": "travel",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: What percentage of travel are you willing to accept?\nA: I am willing to accept up to 75% travel if applicable.",
+    "id": "travel_02",
+    "category": "work_preferences",
+    "topic": "travel_percentage",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Do you consent to a background check?\nA: Yes, I consent to a background check and employment verification if required.",
+    "id": "background_01",
+    "category": "compliance",
+    "topic": "background_check",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to undergo a drug screening?\nA: Yes, I am willing to undergo a drug screening if required by company policy or law.",
+    "id": "background_02",
+    "category": "compliance",
+    "topic": "drug_screening",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to comply with company policies related to data security?\nA: Yes, I am willing to comply with company policies related to data security and confidentiality.",
+    "id": "compliance_01",
+    "category": "compliance",
+    "topic": "security",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to sign a confidentiality or IP agreement?\nA: Yes, I am willing to sign a confidentiality or intellectual property agreement.",
+    "id": "compliance_02",
+    "category": "compliance",
+    "topic": "nda",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Do you have a reliable internet connection for remote work?\nA: Yes, I have a reliable internet connection suitable for remote or hybrid work.",
+    "id": "remote_01",
+    "category": "remote_readiness",
+    "topic": "internet",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you willing to undergo required training or certification?\nA: Yes, I am willing to undergo required training or certification for this role.",
+    "id": "training_01",
+    "category": "professional_development",
+    "topic": "training",
+    "audience": "recruiter"
+  },
+  {
+    "source": "personal_info.json",
+    "text": "Q: Are you open to technical assessments during the hiring process?\nA: Yes, I am open to role-specific assessments or technical evaluations during the hiring process.",
+    "id": "assessment_01",
+    "category": "hiring_process",
+    "topic": "assessment",
+    "audience": "recruiter"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Tell me about the most challenging technical problem you worked on.\nA: One of the most challenging problems I worked on was improving answer relevance in my portfolio RAG application. Although the model produced fluent responses, they were not aligned with recruiter expectations. I identified this as a data and retrieval issue rather than a model issue and redesigned the question set and chunking strategy. This significantly improved response quality and realism.",
+    "id": "behavioral_challenge_01",
+    "category": "interview_behavioral",
+    "topic": "challenge",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Describe a bug that took a long time to fix.\nA: While working on a RAG ingestion pipeline, I encountered inconsistent retrieval results that were difficult to reproduce. After systematic debugging, I traced the issue to overlapping chunks and embedding granularity. Adjusting chunk sizes and adding query re-ranking stabilized the results. This taught me how small design decisions can significantly affect downstream behavior.",
+    "id": "behavioral_challenge_02",
+    "category": "interview_behavioral",
+    "topic": "debugging",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Tell me about a time something you built didn't work as expected.\nA: My initial version of the portfolio RAG app answered questions correctly but failed to satisfy recruiter-style behavioral questions. The system was technically functional but product-wise ineffective. I treated this as a user-alignment failure and redesigned the dataset around real interview signals. This resulted in much more realistic and useful answers.",
+    "id": "behavioral_challenge_03",
+    "category": "interview_behavioral",
+    "topic": "failure",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What's the hardest part of building LLM-based systems?\nA: The hardest part is aligning model outputs with real user intent. In my RAG project, the model could answer almost anything, but relevance depended heavily on data curation and prompt structure. I learned that evaluation and dataset design matter more than raw model capability. This changed how I approach AI system design.",
+    "id": "behavioral_challenge_04",
+    "category": "interview_behavioral",
+    "topic": "llm_systems",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Tell me about a time you had to debug something unfamiliar.\nA: During my Ubuntu OS research project, I frequently had to debug unfamiliar subsystems in a large codebase. I started by tracing execution paths, reading documentation, and isolating behavior through small experiments. This approach helped me build a mental model before making changes. It made me more confident working in large systems.",
+    "id": "behavioral_challenge_05",
+    "category": "interview_behavioral",
+    "topic": "debugging",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Why did you choose RAG instead of fine-tuning?\nA: I chose RAG because my data changes frequently and is highly specific to my experience. Fine-tuning would be less flexible and slower to iterate on. RAG allowed me to update content quickly and experiment with retrieval strategies. This better matched my product goals.",
+    "id": "behavioral_decision_01",
+    "category": "interview_behavioral",
+    "topic": "decision_making",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What alternatives did you consider?\nA: I considered static FAQ pages and prompt-only approaches. However, they lacked adaptability and grounding in real experience. RAG provided structured retrieval with dynamic responses, which justified the added complexity. This tradeoff made the system more useful.",
+    "id": "behavioral_decision_02",
+    "category": "interview_behavioral",
+    "topic": "tradeoffs",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer",
+      "SWE"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: How do you evaluate whether something is good enough?\nA: I evaluate solutions based on whether they meet real user expectations. In my RAG app, fluency was not enough; recruiter realism was the key metric. I manually evaluated answers against actual interview standards. This guided further iteration.",
+    "id": "behavioral_decision_03",
+    "category": "interview_behavioral",
+    "topic": "evaluation",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: How do you learn a new technology?\nA: I learn by building small, focused prototypes. For RAG systems, I experimented with chunking and retrieval methods before full integration. This hands-on approach helps me understand tradeoffs quickly and retain knowledge.",
+    "id": "behavioral_learning_01",
+    "category": "interview_behavioral",
+    "topic": "learning",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What technology was hardest for you initially?\nA: Understanding retrieval behavior in RAG systems was initially challenging because small changes produced large output differences. Through experimentation and debugging, I developed intuition for how embeddings and chunking interact. This improved my system design skills.",
+    "id": "behavioral_learning_02",
+    "category": "interview_behavioral",
+    "topic": "learning",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: How do you handle not knowing something?\nA: I start by narrowing the problem and validating assumptions. I read documentation, inspect behavior, and test small changes. This methodical approach has worked well for both large codebases and AI systems.",
+    "id": "behavioral_learning_03",
+    "category": "interview_behavioral",
+    "topic": "learning",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Tell me about a project you owned end-to-end.\nA: I owned my portfolio RAG app end-to-end, from data collection to deployment. I designed the ingestion pipeline, retrieval logic, and prompt structure. I also evaluated outputs against recruiter expectations. This gave me full lifecycle ownership experience.",
+    "id": "behavioral_ownership_01",
+    "category": "interview_behavioral",
+    "topic": "ownership",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What part of a project are you most proud of?\nA: I'm most proud of recognizing and fixing the gap between technically correct answers and recruiter-relevant answers. Addressing this significantly improved the system. It demonstrated strong product judgment.",
+    "id": "behavioral_ownership_02",
+    "category": "interview_behavioral",
+    "topic": "ownership",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: Why should we hire you?\nA: I bring strong system-thinking skills and hands-on experience building AI applications end-to-end. I focus on aligning technology with real user decision-making. My projects demonstrate practical problem-solving rather than theory alone.",
+    "id": "behavioral_bonus_01",
+    "category": "interview_behavioral",
+    "topic": "closing",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What differentiates you from other candidates?\nA: I build systems with user alignment in mind, not just technical correctness. My portfolio RAG project reflects real recruiter evaluation rather than idealized demos. That product mindset differentiates my work.",
+    "id": "behavioral_bonus_02",
+    "category": "interview_behavioral",
+    "topic": "closing",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What is your greatest strength?\nA: My greatest strength is my ability to quickly learn and adapt to new technologies. I enjoy diving deep into complex systems and finding elegant solutions. For example, building this RAG portfolio app required me to learn embedding systems, vector databases, and prompt engineering in a short time.",
+    "id": "behavioral_strength_01",
+    "category": "interview_behavioral",
+    "topic": "strength",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What are your strengths?\nA: I'm a fast learner with strong problem-solving skills and attention to detail. I enjoy building systems end-to-end and take ownership of my work. I also communicate complex technical concepts clearly, which helps in team collaboration.",
+    "id": "behavioral_strength_02",
+    "category": "interview_behavioral",
+    "topic": "strength",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What is your greatest weakness?\nA: I sometimes spend too much time perfecting details when good enough would suffice. I'm learning to balance quality with velocity by setting clear milestones and timeboxing my work. This RAG project actually helped me practice shipping iteratively.",
+    "id": "behavioral_weakness_01",
+    "category": "interview_behavioral",
+    "topic": "weakness",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "behavioral_qa.json",
+    "text": "Q: What are your weaknesses?\nA: I tend to be a perfectionist, which can slow me down. I'm actively working on this by adopting an iterative development approach and focusing on delivering value quickly. I've found that getting feedback early helps me prioritize better.",
+    "id": "behavioral_weakness_02",
+    "category": "interview_behavioral",
+    "topic": "weakness",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ],
+    "seniority": "entry_level"
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Which programming languages are you most comfortable using?\nA: I am most comfortable using Python and JavaScript. I am also comfortable working with SQL for data-heavy applications.",
+    "id": "skills_languages",
+    "category": "technical_skills",
+    "topic": "languages",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: How many years of hands-on coding experience do you have?\nA: I have approximately 1-2 years of hands-on coding experience outside of coursework through internships, research work, and independent projects.",
+    "id": "skills_experience_years",
+    "category": "technical_skills",
+    "topic": "experience_level",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you worked with large or multi-module codebases before?\nA: Yes, I have worked with large codebases through internship projects and personal applications with separated frontend, backend, and data layers.",
+    "id": "skills_codebases",
+    "category": "technical_skills",
+    "topic": "codebase_experience",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: What type of backend systems have you built?\nA: I have built REST APIs, data processing pipelines, and backend services supporting dashboards and AI-powered applications.",
+    "id": "skills_backend",
+    "category": "technical_skills",
+    "topic": "backend",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Which frameworks have you used to build backend services?\nA: I have used FastAPI, Flask, Node.js, and Express for building backend services.",
+    "id": "skills_frameworks",
+    "category": "technical_skills",
+    "topic": "frameworks",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you designed or maintained RESTful APIs?\nA: Yes, I have designed and maintained RESTful APIs for personal projects and internal tools supporting user-facing applications.",
+    "id": "skills_apis",
+    "category": "technical_skills",
+    "topic": "apis",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: What databases have you worked with?\nA: I have worked with PostgreSQL and MongoDB, primarily for schema design, querying, and basic performance optimization.",
+    "id": "skills_databases",
+    "category": "technical_skills",
+    "topic": "databases",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you written complex SQL queries?\nA: Yes, I regularly write complex SQL queries involving joins, aggregations, and subqueries for reporting, analytics, and backend data retrieval.",
+    "id": "skills_sql",
+    "category": "technical_skills",
+    "topic": "sql",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you implemented authentication or authorization mechanisms?\nA: Yes, I have implemented token-based authentication and role-based access controls in project applications.",
+    "id": "skills_auth",
+    "category": "technical_skills",
+    "topic": "security",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: What experience do you have with frontend development?\nA: I have experience building React and Next.js frontends connected to backend APIs.",
+    "id": "skills_frontend",
+    "category": "technical_skills",
+    "topic": "frontend",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you deployed applications to cloud platforms?\nA: Yes, I have deployed applications using platforms such as Vercel, Render, Hugging Face Spaces, and basic AWS services.",
+    "id": "skills_deployment",
+    "category": "technical_skills",
+    "topic": "deployment",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: What experience do you have with Docker?\nA: I have experience containerizing backend services and running applications in Docker for development and deployment.",
+    "id": "skills_docker",
+    "category": "technical_skills",
+    "topic": "docker",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you worked with CI/CD pipelines?\nA: Yes, I have set up CI/CD pipelines using GitHub Actions for automated testing, builds, and deployments.",
+    "id": "skills_cicd",
+    "category": "technical_skills",
+    "topic": "cicd",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you written automated tests?\nA: Yes, I have written unit tests and basic integration tests for backend services.",
+    "id": "skills_testing",
+    "category": "technical_skills",
+    "topic": "testing",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: How do you typically debug issues in production?\nA: I debug by reviewing logs, reproducing issues locally, isolating failing components, and validating fixes with tests.",
+    "id": "skills_debugging",
+    "category": "technical_skills",
+    "topic": "debugging",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: What experience do you have with data processing pipelines?\nA: I have experience cleaning, validating, and transforming structured data for analytics and ML workflows.",
+    "id": "skills_data_pipelines",
+    "category": "technical_skills",
+    "topic": "data_engineering",
+    "audience": "recruiter",
+    "role": [
+      "SWE",
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you trained or fine-tuned machine learning models?\nA: Yes, I have trained and evaluated ML models at an entry level through research projects and personal ML applications.",
+    "id": "skills_ml",
+    "category": "technical_skills",
+    "topic": "machine_learning",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you integrated ML models into applications?\nA: Yes, I have integrated ML and LLM-based features into backend services via APIs for real user-facing applications.",
+    "id": "skills_ml_integration",
+    "category": "technical_skills",
+    "topic": "ml_integration",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: Have you worked with LLMs, embeddings, or RAG systems?\nA: Yes, I have worked with embedding-based retrieval and RAG-style pipelines using vector databases.",
+    "id": "skills_llm",
+    "category": "technical_skills",
+    "topic": "llm_rag",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer"
+    ]
+  },
+  {
+    "source": "technical_skills.json",
+    "text": "Q: How comfortable are you reading and modifying unfamiliar code?\nA: I am comfortable reading and modifying unfamiliar code. I regularly navigate unfamiliar codebases and make targeted changes after understanding the system structure.",
+    "id": "skills_code_reading",
+    "category": "technical_skills",
+    "topic": "code_comprehension",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: What is your contact information?\nA: My name is Gantumur Battumur. I'm based in Seattle, WA. You can reach me at 509-251-6832 or ganabattumur@gmail.com. My LinkedIn is linkedin.com/in/gantumur-battumur and my GitHub is github.com/gantumurbattumur.",
+    "id": "personal_info",
+    "category": "personal",
+    "topic": "contact",
+    "audience": "recruiter"
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: Tell me about yourself.\nA: I'm a customer-focused professional with experience in technical support, customer service, and problem resolution in fast-paced environments. I'm a strong communicator with a background supporting users with technology issues, explaining solutions clearly, and delivering positive customer experiences. I'm passionate about helping people use technology confidently and effectively.",
+    "id": "summary",
+    "category": "personal",
+    "topic": "summary",
+    "audience": "recruiter"
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: Tell me about your experience at F5 Networks.\nA: I worked as a Software Engineer Intern at F5 Networks in Liberty Lake, WA from June 2024 to October 2024. I automated Power Supply Unit validation and diagnostics workflows, reducing manual QA testing by approximately 70 percent and preventing recurring calibration failures. I developed Python-based automation for hardware calibration, fault detection, and structured data logging to support reproducible validation and debugging. I also built real-time health-check pipelines and internal dashboards to improve system observability, reliability, and reporting for engineering teams. Technologies I used include Python, internal automation frameworks, data logging pipelines, and monitoring dashboards.",
+    "id": "experience_f5",
+    "category": "experience",
+    "topic": "internship",
+    "audience": "recruiter",
+    "role": [
+      "SWE"
+    ]
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: Tell me about your IT Support experience.\nA: I worked as an IT Support Assistant at Whitworth University Campus IT Services in Spokane, WA from September 2022 to May 2025. I provided technical support to students, faculty, and staff for hardware, software, and account-related issues. I assisted users with device setup, login problems, network connectivity, and basic troubleshooting. I communicated technical solutions in a clear, friendly, and easy-to-understand manner. I documented support requests and resolutions to ensure timely follow-up and service quality.",
+    "id": "experience_it_support",
+    "category": "experience",
+    "topic": "it_support",
+    "audience": "recruiter",
+    "role": [
+      "IT Support"
+    ]
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: Tell me about your customer service experience.\nA: I worked as Student Director (Customer Service & Operations) at Whitworth University Recreational Center in Spokane, WA from September 2023 to May 2025. I led front-desk customer service operations in a high-traffic campus facility serving students, staff, and visitors. I assisted customers with access issues, reservations, payments, and general inquiries. I resolved customer concerns professionally while maintaining a welcoming and inclusive environment. I trained and supported student staff on customer service standards and daily procedures.",
+    "id": "experience_rec_center",
+    "category": "experience",
+    "topic": "customer_service",
+    "audience": "recruiter",
+    "role": [
+      "Customer Service"
+    ]
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: Tell me about your AI Vocabulary Learning Tool project.\nA: I built a Generative AI application using LLMs and retrieval-augmented generation (RAG) for stories and images for personalized vocabulary learning. I designed a full-stack AI system with a Next.js frontend, FastAPI backend, and PostgreSQL for the database. I implemented batched, cached, and asynchronous LLM inference pipelines, reducing generation latency by approximately 40 percent and lowering operational costs. Technologies used include Python, FastAPI, Next.js, PostgreSQL, Gemini API, RAG, Docker, REST APIs, and asynchronous inference.",
+    "id": "project_vocab",
+    "category": "projects",
+    "topic": "ai_project",
+    "audience": "recruiter",
+    "role": [
+      "AI Engineer",
+      "SWE"
+    ]
+  },
+  {
+    "source": "resume.json",
+    "text": "Q: What is your educational background?\nA: I graduated from Whitworth University in Spokane, WA in May 2025 with a Bachelor of Science in Computer Science and a Minor in Mathematics. I attended from September 2021 to May 2025.",
+    "id": "education",
+    "category": "education",
+    "topic": "degree",
+    "audience": "recruiter"
+  }
+]

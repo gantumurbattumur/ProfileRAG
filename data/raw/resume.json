@@ -1,0 +1,77 @@
+[
+    {
+        "id": "personal_info",
+        "question": "What is your contact information?",
+        "answer": "My name is Gantumur Battumur. I'm based in Seattle, WA. You can reach me at 509-251-6832 or ganabattumur@gmail.com. My LinkedIn is linkedin.com/in/gantumur-battumur and my GitHub is github.com/gantumurbattumur.",
+        "category": "personal",
+        "topic": "contact",
+        "audience": "recruiter"
+    },
+    {
+        "id": "summary",
+        "question": "Tell me about yourself.",
+        "answer": "I'm a customer-focused professional with experience in technical support, customer service, and problem resolution in fast-paced environments. I'm a strong communicator with a background supporting users with technology issues, explaining solutions clearly, and delivering positive customer experiences. I'm passionate about helping people use technology confidently and effectively.",
+        "category": "personal",
+        "topic": "summary",
+        "audience": "recruiter"
+    },
+    {
+        "id": "experience_f5",
+        "question": "Tell me about your experience at F5 Networks.",
+        "answer": "I worked as a Software Engineer Intern at F5 Networks in Liberty Lake, WA from June 2024 to October 2024. I automated Power Supply Unit validation and diagnostics workflows, reducing manual QA testing by approximately 70 percent and preventing recurring calibration failures. I developed Python-based automation for hardware calibration, fault detection, and structured data logging to support reproducible validation and debugging. I also built real-time health-check pipelines and internal dashboards to improve system observability, reliability, and reporting for engineering teams. Technologies I used include Python, internal automation frameworks, data logging pipelines, and monitoring dashboards.",
+        "category": "experience",
+        "topic": "internship",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ],
+        "company": "F5 Networks",
+        "duration": "June 2024 - Oct 2024"
+    },
+    {
+        "id": "experience_it_support",
+        "question": "Tell me about your IT Support experience.",
+        "answer": "I worked as an IT Support Assistant at Whitworth University Campus IT Services in Spokane, WA from September 2022 to May 2025. I provided technical support to students, faculty, and staff for hardware, software, and account-related issues. I assisted users with device setup, login problems, network connectivity, and basic troubleshooting. I communicated technical solutions in a clear, friendly, and easy-to-understand manner. I documented support requests and resolutions to ensure timely follow-up and service quality.",
+        "category": "experience",
+        "topic": "it_support",
+        "audience": "recruiter",
+        "role": [
+            "IT Support"
+        ],
+        "company": "Whitworth University",
+        "duration": "Sept 2022 - May 2025"
+    },
+    {
+        "id": "experience_rec_center",
+        "question": "Tell me about your customer service experience.",
+        "answer": "I worked as Student Director (Customer Service & Operations) at Whitworth University Recreational Center in Spokane, WA from September 2023 to May 2025. I led front-desk customer service operations in a high-traffic campus facility serving students, staff, and visitors. I assisted customers with access issues, reservations, payments, and general inquiries. I resolved customer concerns professionally while maintaining a welcoming and inclusive environment. I trained and supported student staff on customer service standards and daily procedures.",
+        "category": "experience",
+        "topic": "customer_service",
+        "audience": "recruiter",
+        "role": [
+            "Customer Service"
+        ],
+        "company": "Whitworth University",
+        "duration": "Sept 2023 - May 2025"
+    },
+    {
+        "id": "project_vocab",
+        "question": "Tell me about your AI Vocabulary Learning Tool project.",
+        "answer": "I built a Generative AI application using LLMs and retrieval-augmented generation (RAG) for stories and images for personalized vocabulary learning. I designed a full-stack AI system with a Next.js frontend, FastAPI backend, and PostgreSQL for the database. I implemented batched, cached, and asynchronous LLM inference pipelines, reducing generation latency by approximately 40 percent and lowering operational costs. Technologies used include Python, FastAPI, Next.js, PostgreSQL, Gemini API, RAG, Docker, REST APIs, and asynchronous inference.",
+        "category": "projects",
+        "topic": "ai_project",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer",
+            "SWE"
+        ]
+    },
+    {
+        "id": "education",
+        "question": "What is your educational background?",
+        "answer": "I graduated from Whitworth University in Spokane, WA in May 2025 with a Bachelor of Science in Computer Science and a Minor in Mathematics. I attended from September 2021 to May 2025.",
+        "category": "education",
+        "topic": "degree",
+        "audience": "recruiter"
+    }
+]

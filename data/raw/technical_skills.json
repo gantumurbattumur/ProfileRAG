@@ -1,0 +1,226 @@
+[
+    {
+        "id": "skills_languages",
+        "question": "Which programming languages are you most comfortable using?",
+        "answer": "I am most comfortable using Python and JavaScript. I am also comfortable working with SQL for data-heavy applications.",
+        "category": "technical_skills",
+        "topic": "languages",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_experience_years",
+        "question": "How many years of hands-on coding experience do you have?",
+        "answer": "I have approximately 1-2 years of hands-on coding experience outside of coursework through internships, research work, and independent projects.",
+        "category": "technical_skills",
+        "topic": "experience_level",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_codebases",
+        "question": "Have you worked with large or multi-module codebases before?",
+        "answer": "Yes, I have worked with large codebases through internship projects and personal applications with separated frontend, backend, and data layers.",
+        "category": "technical_skills",
+        "topic": "codebase_experience",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_backend",
+        "question": "What type of backend systems have you built?",
+        "answer": "I have built REST APIs, data processing pipelines, and backend services supporting dashboards and AI-powered applications.",
+        "category": "technical_skills",
+        "topic": "backend",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_frameworks",
+        "question": "Which frameworks have you used to build backend services?",
+        "answer": "I have used FastAPI, Flask, Node.js, and Express for building backend services.",
+        "category": "technical_skills",
+        "topic": "frameworks",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_apis",
+        "question": "Have you designed or maintained RESTful APIs?",
+        "answer": "Yes, I have designed and maintained RESTful APIs for personal projects and internal tools supporting user-facing applications.",
+        "category": "technical_skills",
+        "topic": "apis",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_databases",
+        "question": "What databases have you worked with?",
+        "answer": "I have worked with PostgreSQL and MongoDB, primarily for schema design, querying, and basic performance optimization.",
+        "category": "technical_skills",
+        "topic": "databases",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_sql",
+        "question": "Have you written complex SQL queries?",
+        "answer": "Yes, I regularly write complex SQL queries involving joins, aggregations, and subqueries for reporting, analytics, and backend data retrieval.",
+        "category": "technical_skills",
+        "topic": "sql",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_auth",
+        "question": "Have you implemented authentication or authorization mechanisms?",
+        "answer": "Yes, I have implemented token-based authentication and role-based access controls in project applications.",
+        "category": "technical_skills",
+        "topic": "security",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_frontend",
+        "question": "What experience do you have with frontend development?",
+        "answer": "I have experience building React and Next.js frontends connected to backend APIs.",
+        "category": "technical_skills",
+        "topic": "frontend",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_deployment",
+        "question": "Have you deployed applications to cloud platforms?",
+        "answer": "Yes, I have deployed applications using platforms such as Vercel, Render, Hugging Face Spaces, and basic AWS services.",
+        "category": "technical_skills",
+        "topic": "deployment",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_docker",
+        "question": "What experience do you have with Docker?",
+        "answer": "I have experience containerizing backend services and running applications in Docker for development and deployment.",
+        "category": "technical_skills",
+        "topic": "docker",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_cicd",
+        "question": "Have you worked with CI/CD pipelines?",
+        "answer": "Yes, I have set up CI/CD pipelines using GitHub Actions for automated testing, builds, and deployments.",
+        "category": "technical_skills",
+        "topic": "cicd",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_testing",
+        "question": "Have you written automated tests?",
+        "answer": "Yes, I have written unit tests and basic integration tests for backend services.",
+        "category": "technical_skills",
+        "topic": "testing",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_debugging",
+        "question": "How do you typically debug issues in production?",
+        "answer": "I debug by reviewing logs, reproducing issues locally, isolating failing components, and validating fixes with tests.",
+        "category": "technical_skills",
+        "topic": "debugging",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    },
+    {
+        "id": "skills_data_pipelines",
+        "question": "What experience do you have with data processing pipelines?",
+        "answer": "I have experience cleaning, validating, and transforming structured data for analytics and ML workflows.",
+        "category": "technical_skills",
+        "topic": "data_engineering",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_ml",
+        "question": "Have you trained or fine-tuned machine learning models?",
+        "answer": "Yes, I have trained and evaluated ML models at an entry level through research projects and personal ML applications.",
+        "category": "technical_skills",
+        "topic": "machine_learning",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_ml_integration",
+        "question": "Have you integrated ML models into applications?",
+        "answer": "Yes, I have integrated ML and LLM-based features into backend services via APIs for real user-facing applications.",
+        "category": "technical_skills",
+        "topic": "ml_integration",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_llm",
+        "question": "Have you worked with LLMs, embeddings, or RAG systems?",
+        "answer": "Yes, I have worked with embedding-based retrieval and RAG-style pipelines using vector databases.",
+        "category": "technical_skills",
+        "topic": "llm_rag",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ]
+    },
+    {
+        "id": "skills_code_reading",
+        "question": "How comfortable are you reading and modifying unfamiliar code?",
+        "answer": "I am comfortable reading and modifying unfamiliar code. I regularly navigate unfamiliar codebases and make targeted changes after understanding the system structure.",
+        "category": "technical_skills",
+        "topic": "code_comprehension",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ]
+    }
+]

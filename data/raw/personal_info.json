@@ -1,0 +1,194 @@
+[
+    {
+        "id": "work_auth_01",
+        "question": "Are you legally authorized to work in the United States?",
+        "answer": "Yes, I am legally authorized to work in the United States.",
+        "category": "work_authorization",
+        "topic": "legal_status",
+        "audience": "recruiter"
+    },
+    {
+        "id": "work_auth_02",
+        "question": "Will you now or in the future require sponsorship for employment visa status?",
+        "answer": "No, I do not require sponsorship for employment visa status.",
+        "category": "work_authorization",
+        "topic": "sponsorship",
+        "audience": "recruiter"
+    },
+    {
+        "id": "work_auth_03",
+        "question": "What is your current immigration or work authorization status?",
+        "answer": "I am on F-1 Visa STEM OPT.",
+        "category": "work_authorization",
+        "topic": "visa_status",
+        "audience": "recruiter"
+    },
+    {
+        "id": "personal_01",
+        "question": "Are you at least 18 years of age?",
+        "answer": "Yes, I am at least 18 years of age.",
+        "category": "personal",
+        "topic": "age",
+        "audience": "recruiter"
+    },
+    {
+        "id": "personal_02",
+        "question": "How old are you?",
+        "answer": "I am 22 years old. I graduated recently and am excited to start my career as a software engineer!",
+        "category": "personal",
+        "topic": "age",
+        "audience": "recruiter"
+    },
+    {
+        "id": "personal_03",
+        "question": "What is your age?",
+        "answer": "I am 22 years old. I just graduated and am eager to contribute my skills to an innovative team!",
+        "category": "personal",
+        "topic": "age",
+        "audience": "recruiter"
+    },
+    {
+        "id": "location_01",
+        "question": "What is your current state of residence?",
+        "answer": "I currently reside in Washington State.",
+        "category": "personal",
+        "topic": "location",
+        "audience": "recruiter"
+    },
+    {
+        "id": "location_02",
+        "question": "Are you willing to work onsite, hybrid, or remotely?",
+        "answer": "Yes, I am willing to work onsite, hybrid, or remotely within the United States.",
+        "category": "work_preferences",
+        "topic": "work_location",
+        "audience": "recruiter"
+    },
+    {
+        "id": "location_03",
+        "question": "Are you willing to relocate within the United States?",
+        "answer": "Yes, I am willing to relocate within the United States if required for the role.",
+        "category": "work_preferences",
+        "topic": "relocation",
+        "audience": "recruiter"
+    },
+    {
+        "id": "availability_01",
+        "question": "What is your earliest available start date?",
+        "answer": "My earliest available start date is February 15, 2026.",
+        "category": "availability",
+        "topic": "start_date",
+        "audience": "recruiter"
+    },
+    {
+        "id": "availability_02",
+        "question": "Are you applying for full-time, part-time, or contract employment?",
+        "answer": "I am applying for full-time employment, but I am open to any positions.",
+        "category": "availability",
+        "topic": "employment_type",
+        "audience": "recruiter"
+    },
+    {
+        "id": "availability_03",
+        "question": "Are you currently employed?",
+        "answer": "No, I am not currently employed.",
+        "category": "availability",
+        "topic": "current_status",
+        "audience": "recruiter"
+    },
+    {
+        "id": "availability_04",
+        "question": "What is your required notice period?",
+        "answer": "No notice period is needed. I can start immediately.",
+        "category": "availability",
+        "topic": "notice_period",
+        "audience": "recruiter"
+    },
+    {
+        "id": "flexibility_01",
+        "question": "Are you willing to work overtime or flexible hours?",
+        "answer": "Yes, I am willing to work overtime or flexible hours if business needs require it.",
+        "category": "work_preferences",
+        "topic": "flexibility",
+        "audience": "recruiter"
+    },
+    {
+        "id": "flexibility_02",
+        "question": "Are you open to working in different time zones?",
+        "answer": "Yes, I am open to working in different time zones if the role supports distributed teams.",
+        "category": "work_preferences",
+        "topic": "timezone",
+        "audience": "recruiter"
+    },
+    {
+        "id": "travel_01",
+        "question": "Are you willing to travel for work?",
+        "answer": "Yes, I am willing to travel occasionally for work if required.",
+        "category": "work_preferences",
+        "topic": "travel",
+        "audience": "recruiter"
+    },
+    {
+        "id": "travel_02",
+        "question": "What percentage of travel are you willing to accept?",
+        "answer": "I am willing to accept up to 75% travel if applicable.",
+        "category": "work_preferences",
+        "topic": "travel_percentage",
+        "audience": "recruiter"
+    },
+    {
+        "id": "background_01",
+        "question": "Do you consent to a background check?",
+        "answer": "Yes, I consent to a background check and employment verification if required.",
+        "category": "compliance",
+        "topic": "background_check",
+        "audience": "recruiter"
+    },
+    {
+        "id": "background_02",
+        "question": "Are you willing to undergo a drug screening?",
+        "answer": "Yes, I am willing to undergo a drug screening if required by company policy or law.",
+        "category": "compliance",
+        "topic": "drug_screening",
+        "audience": "recruiter"
+    },
+    {
+        "id": "compliance_01",
+        "question": "Are you willing to comply with company policies related to data security?",
+        "answer": "Yes, I am willing to comply with company policies related to data security and confidentiality.",
+        "category": "compliance",
+        "topic": "security",
+        "audience": "recruiter"
+    },
+    {
+        "id": "compliance_02",
+        "question": "Are you willing to sign a confidentiality or IP agreement?",
+        "answer": "Yes, I am willing to sign a confidentiality or intellectual property agreement.",
+        "category": "compliance",
+        "topic": "nda",
+        "audience": "recruiter"
+    },
+    {
+        "id": "remote_01",
+        "question": "Do you have a reliable internet connection for remote work?",
+        "answer": "Yes, I have a reliable internet connection suitable for remote or hybrid work.",
+        "category": "remote_readiness",
+        "topic": "internet",
+        "audience": "recruiter"
+    },
+    {
+        "id": "training_01",
+        "question": "Are you willing to undergo required training or certification?",
+        "answer": "Yes, I am willing to undergo required training or certification for this role.",
+        "category": "professional_development",
+        "topic": "training",
+        "audience": "recruiter"
+    },
+    {
+        "id": "assessment_01",
+        "question": "Are you open to technical assessments during the hiring process?",
+        "answer": "Yes, I am open to role-specific assessments or technical evaluations during the hiring process.",
+        "category": "hiring_process",
+        "topic": "assessment",
+        "audience": "recruiter"
+    }
+]

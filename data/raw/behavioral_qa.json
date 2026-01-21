@@ -1,0 +1,245 @@
+[
+    {
+        "id": "behavioral_challenge_01",
+        "question": "Tell me about the most challenging technical problem you worked on.",
+        "answer": "One of the most challenging problems I worked on was improving answer relevance in my portfolio RAG application. Although the model produced fluent responses, they were not aligned with recruiter expectations. I identified this as a data and retrieval issue rather than a model issue and redesigned the question set and chunking strategy. This significantly improved response quality and realism.",
+        "category": "interview_behavioral",
+        "topic": "challenge",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_challenge_02",
+        "question": "Describe a bug that took a long time to fix.",
+        "answer": "While working on a RAG ingestion pipeline, I encountered inconsistent retrieval results that were difficult to reproduce. After systematic debugging, I traced the issue to overlapping chunks and embedding granularity. Adjusting chunk sizes and adding query re-ranking stabilized the results. This taught me how small design decisions can significantly affect downstream behavior.",
+        "category": "interview_behavioral",
+        "topic": "debugging",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_challenge_03",
+        "question": "Tell me about a time something you built didn't work as expected.",
+        "answer": "My initial version of the portfolio RAG app answered questions correctly but failed to satisfy recruiter-style behavioral questions. The system was technically functional but product-wise ineffective. I treated this as a user-alignment failure and redesigned the dataset around real interview signals. This resulted in much more realistic and useful answers.",
+        "category": "interview_behavioral",
+        "topic": "failure",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_challenge_04",
+        "question": "What's the hardest part of building LLM-based systems?",
+        "answer": "The hardest part is aligning model outputs with real user intent. In my RAG project, the model could answer almost anything, but relevance depended heavily on data curation and prompt structure. I learned that evaluation and dataset design matter more than raw model capability. This changed how I approach AI system design.",
+        "category": "interview_behavioral",
+        "topic": "llm_systems",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_challenge_05",
+        "question": "Tell me about a time you had to debug something unfamiliar.",
+        "answer": "During my Ubuntu OS research project, I frequently had to debug unfamiliar subsystems in a large codebase. I started by tracing execution paths, reading documentation, and isolating behavior through small experiments. This approach helped me build a mental model before making changes. It made me more confident working in large systems.",
+        "category": "interview_behavioral",
+        "topic": "debugging",
+        "audience": "recruiter",
+        "role": [
+            "SWE"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_decision_01",
+        "question": "Why did you choose RAG instead of fine-tuning?",
+        "answer": "I chose RAG because my data changes frequently and is highly specific to my experience. Fine-tuning would be less flexible and slower to iterate on. RAG allowed me to update content quickly and experiment with retrieval strategies. This better matched my product goals.",
+        "category": "interview_behavioral",
+        "topic": "decision_making",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_decision_02",
+        "question": "What alternatives did you consider?",
+        "answer": "I considered static FAQ pages and prompt-only approaches. However, they lacked adaptability and grounding in real experience. RAG provided structured retrieval with dynamic responses, which justified the added complexity. This tradeoff made the system more useful.",
+        "category": "interview_behavioral",
+        "topic": "tradeoffs",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer",
+            "SWE"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_decision_03",
+        "question": "How do you evaluate whether something is good enough?",
+        "answer": "I evaluate solutions based on whether they meet real user expectations. In my RAG app, fluency was not enough; recruiter realism was the key metric. I manually evaluated answers against actual interview standards. This guided further iteration.",
+        "category": "interview_behavioral",
+        "topic": "evaluation",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_learning_01",
+        "question": "How do you learn a new technology?",
+        "answer": "I learn by building small, focused prototypes. For RAG systems, I experimented with chunking and retrieval methods before full integration. This hands-on approach helps me understand tradeoffs quickly and retain knowledge.",
+        "category": "interview_behavioral",
+        "topic": "learning",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_learning_02",
+        "question": "What technology was hardest for you initially?",
+        "answer": "Understanding retrieval behavior in RAG systems was initially challenging because small changes produced large output differences. Through experimentation and debugging, I developed intuition for how embeddings and chunking interact. This improved my system design skills.",
+        "category": "interview_behavioral",
+        "topic": "learning",
+        "audience": "recruiter",
+        "role": [
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_learning_03",
+        "question": "How do you handle not knowing something?",
+        "answer": "I start by narrowing the problem and validating assumptions. I read documentation, inspect behavior, and test small changes. This methodical approach has worked well for both large codebases and AI systems.",
+        "category": "interview_behavioral",
+        "topic": "learning",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_ownership_01",
+        "question": "Tell me about a project you owned end-to-end.",
+        "answer": "I owned my portfolio RAG app end-to-end, from data collection to deployment. I designed the ingestion pipeline, retrieval logic, and prompt structure. I also evaluated outputs against recruiter expectations. This gave me full lifecycle ownership experience.",
+        "category": "interview_behavioral",
+        "topic": "ownership",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_ownership_02",
+        "question": "What part of a project are you most proud of?",
+        "answer": "I'm most proud of recognizing and fixing the gap between technically correct answers and recruiter-relevant answers. Addressing this significantly improved the system. It demonstrated strong product judgment.",
+        "category": "interview_behavioral",
+        "topic": "ownership",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_bonus_01",
+        "question": "Why should we hire you?",
+        "answer": "I bring strong system-thinking skills and hands-on experience building AI applications end-to-end. I focus on aligning technology with real user decision-making. My projects demonstrate practical problem-solving rather than theory alone.",
+        "category": "interview_behavioral",
+        "topic": "closing",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_bonus_02",
+        "question": "What differentiates you from other candidates?",
+        "answer": "I build systems with user alignment in mind, not just technical correctness. My portfolio RAG project reflects real recruiter evaluation rather than idealized demos. That product mindset differentiates my work.",
+        "category": "interview_behavioral",
+        "topic": "closing",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_strength_01",
+        "question": "What is your greatest strength?",
+        "answer": "My greatest strength is my ability to quickly learn and adapt to new technologies. I enjoy diving deep into complex systems and finding elegant solutions. For example, building this RAG portfolio app required me to learn embedding systems, vector databases, and prompt engineering in a short time.",
+        "category": "interview_behavioral",
+        "topic": "strength",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_strength_02",
+        "question": "What are your strengths?",
+        "answer": "I'm a fast learner with strong problem-solving skills and attention to detail. I enjoy building systems end-to-end and take ownership of my work. I also communicate complex technical concepts clearly, which helps in team collaboration.",
+        "category": "interview_behavioral",
+        "topic": "strength",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_weakness_01",
+        "question": "What is your greatest weakness?",
+        "answer": "I sometimes spend too much time perfecting details when good enough would suffice. I'm learning to balance quality with velocity by setting clear milestones and timeboxing my work. This RAG project actually helped me practice shipping iteratively.",
+        "category": "interview_behavioral",
+        "topic": "weakness",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    },
+    {
+        "id": "behavioral_weakness_02",
+        "question": "What are your weaknesses?",
+        "answer": "I tend to be a perfectionist, which can slow me down. I'm actively working on this by adopting an iterative development approach and focusing on delivering value quickly. I've found that getting feedback early helps me prioritize better.",
+        "category": "interview_behavioral",
+        "topic": "weakness",
+        "audience": "recruiter",
+        "role": [
+            "SWE",
+            "AI Engineer"
+        ],
+        "seniority": "entry_level"
+    }
+]

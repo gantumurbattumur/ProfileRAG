@@ -5,6 +5,12 @@ __pycache__/
 .DS_Store
 .env
 .vscode/
-data/embeddings/*
-data/raw/*
 contact_messages.log
+
+# Keep data files for deployment
+# data/embeddings/*
+# data/raw/*
+
+# Node
+frontend/node_modules/
+frontend/dist/
