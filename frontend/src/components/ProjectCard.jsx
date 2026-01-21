@@ -1,22 +1,23 @@
-import { cardFull } from "../styles/cardStyles";
+const cardStyle = {
+  backgroundColor: 'white',
+  border: '1px solid var(--border)',
+  borderRadius: '0.75rem',
+  padding: '1rem',
+};
 
 export default function ProjectCard({ project }) {
-  const initials = project.title
-    .split(" ")
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-
   const techTags = Array.isArray(project.tech)
     ? project.tech
     : (project.tech || "").split(",").map(t => t.trim()).filter(Boolean);
 
   return (
-    <div className={cardFull}>
-      <div className="flex gap-4 items-start flex-col sm:flex-row">
-        {/* Image/GIF Thumbnail */}
-        <div className="w-full sm:w-48 h-32 rounded-lg overflow-hidden flex-shrink-0 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+    <div style={cardStyle}>
+      <div className="flex gap-4 items-start">
+        {/* Image Thumbnail */}
+        <div
+          className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center"
+          style={{ backgroundColor: 'var(--bg-secondary)' }}
+        >
           {project.image ? (
             <img
               src={project.image}
@@ -24,38 +25,76 @@ export default function ProjectCard({ project }) {
               className="w-full h-full object-cover"
             />
           ) : (
-            <span className="text-white font-bold text-2xl">{initials}</span>
+            <span
+              className="font-semibold text-lg"
+              style={{ color: 'var(--accent)' }}
+            >
+              {project.title.substring(0, 2).toUpperCase()}
+            </span>
           )}
         </div>
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{project.title}</h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{project.type} • {project.year}</p>
-          <p className="text-zinc-700 dark:text-zinc-300 text-sm mt-3 leading-relaxed">{project.description}</p>
-
-          <div className="flex items-center justify-between gap-4 mt-4 flex-wrap">
-            <div className="flex gap-2 flex-wrap">
-              {techTags.slice(0, 5).map((t, idx) => (
-                <span key={idx} className="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-md">
-                  {t}
-                </span>
-              ))}
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <h3
+                className="font-semibold"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {project.title}
+              </h3>
+              <p
+                className="text-xs mt-0.5"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {project.type} • {project.year}
+              </p>
             </div>
-
-            <div className="flex gap-3 items-center">
+            <div className="flex gap-2">
               {project.links && project.links.map((link, idx) => (
                 <a
                   key={idx}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  className="text-xs font-medium hover:underline"
+                  style={{ color: 'var(--accent)' }}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
+          </div>
+
+          <p
+            className="text-sm mt-2 line-clamp-2"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            {project.description}
+          </p>
+
+          <div className="flex gap-1.5 flex-wrap mt-2">
+            {techTags.slice(0, 6).map((t, idx) => (
+              <span
+                key={idx}
+                className="text-xs px-2 py-0.5 rounded"
+                style={{
+                  backgroundColor: 'var(--bg-secondary)',
+                  color: 'var(--text-secondary)',
+                }}
+              >
+                {t}
+              </span>
+            ))}
+            {techTags.length > 6 && (
+              <span
+                className="text-xs px-2 py-0.5"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                +{techTags.length - 6} more
+              </span>
+            )}
           </div>
         </div>
       </div>

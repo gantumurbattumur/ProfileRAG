@@ -29,10 +29,17 @@ const ChatInput = forwardRef(({ onSendMessage, loading, onQuery }, ref) => {
   };
 
   return (
-    <div className="flex items-center w-full max-w-xl bg-white dark:bg-zinc-900 shadow rounded-full px-4 py-2 mb-8">
+    <div
+      className="flex items-center w-full max-w-xl rounded-2xl px-4 py-2 mb-8"
+      style={{
+        backgroundColor: 'white',
+        border: '1px solid var(--border)',
+      }}
+    >
       <input
-        className="flex-1 bg-transparent outline-none px-2 text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400"
-        placeholder="Ask me anything"
+        className="flex-1 bg-transparent outline-none px-2"
+        style={{ color: 'var(--text-primary)' }}
+        placeholder="Ask me anything..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={handleKeyPress}
@@ -41,15 +48,18 @@ const ChatInput = forwardRef(({ onSendMessage, loading, onQuery }, ref) => {
       <button
         onClick={submit}
         disabled={loading || !query.trim()}
-        className={`rounded-full w-10 h-10 flex items-center justify-center transition ${loading || !query.trim()
-            ? "bg-gray-200 dark:bg-gray-700 cursor-not-allowed opacity-50"
-            : "bg-blue-500 hover:bg-blue-600 text-white cursor-pointer"
-          }`}
+        className="rounded-xl w-10 h-10 flex items-center justify-center transition"
+        style={{
+          backgroundColor: loading || !query.trim() ? 'var(--bg-secondary)' : 'var(--accent)',
+          color: loading || !query.trim() ? 'var(--text-secondary)' : 'white',
+          cursor: loading || !query.trim() ? 'not-allowed' : 'pointer',
+          opacity: loading || !query.trim() ? 0.5 : 1,
+        }}
       >
         {loading ? (
           <Loader2 className="w-5 h-5 animate-spin" />
         ) : (
-          <ArrowUp className="w-5 h-5 text-white" />
+          <ArrowUp className="w-5 h-5" />
         )}
       </button>
     </div>

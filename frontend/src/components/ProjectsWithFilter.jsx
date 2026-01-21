@@ -12,7 +12,7 @@ export default function ProjectsWithFilter() {
                     ))
                 ) : (
                     <div className="text-center py-8">
-                        <p className="text-zinc-600 dark:text-zinc-400">No projects yet.</p>
+                        <p style={{ color: 'var(--text-secondary)' }}>No projects yet.</p>
                     </div>
                 )}
             </div>

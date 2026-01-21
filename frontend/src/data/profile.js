@@ -4,12 +4,81 @@ export const projects = [
     title: "AI Vocabulary Learning Tool",
     type: "Full Stack",
     category: "AI/ML",
-    year: "2024",
+    year: "2025",
     description: "Built a Generative AI application using LLMs and retrieval-augmented generation (RAG) for stories and images for personalized vocabulary learning. Designed a full-stack AI system with a Next.js frontend, FastAPI backend, and PostgreSQL for the database.",
     tech: ["Python", "FastAPI", "Next.js", "PostgreSQL", "Gemini API", "RAG", "Docker", "REST APIs"],
     image: "/easeevocab.gif",
     links: [
-      { label: "github", url: "https://github.com/gantumurbattumur/EaseeVocab", type: "github" }
+      { label: "Github", url: "https://github.com/gantumurbattumur/EaseeVocab", type: "github" },
+      { label: "Live", url: "https://easee-vocab.vercel.app/dashboard", type: "live" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Easee Memo",
+    type: "Full Stack",
+    category: "AI/ML",
+    year: "2025",
+    description: "Built an AI-powered web application that enhances memory training using the Memory Palace technique combined with modern AI storytelling and feedback systems. Designed a guided experience where users visualize memory palaces, generate vivid AI-crafted narratives, and receive semantic feedback to reinforce recall.",
+    tech: [
+      "React (Vite)",
+      "Tailwind CSS",
+      "React Router",
+      "FastAPI",
+      "Sentence-Transformers",
+      "Gemini API",
+      "PostgreSQL",
+      "Render",
+      "Vercel",
+      "AI Feedback Systems",
+      "REST APIs"
+    ],
+    image: "/easeememo.jpeg",
+    links: [
+      { label: "Github", url: "https://github.com/gantumurbattumur/EaseeMemo", type: "github" },
+      { label: "Live", url: "https://easee-memo.vercel.app/", type: "live" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Mini Recon AI",
+    type: "Full Stack",
+    category: "AI/ML",
+    year: "2025",
+    description: "Built an AI-powered trade reconciliation engine that compares financial trade records, detects mismatches, generates AI explanations, and allows exception resolution through a professional dashboard. Demonstrates understanding of reconciliation workflows, backend problem-solving, and AI-assisted business operations.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Pandas",
+      "Gemini 2.0 Flash",
+      "JavaScript",
+      "HTML/CSS",
+      "REST APIs",
+      "Data Engineering"
+    ],
+    image: "/mini-recon-ai.png",
+    links: [
+      { label: "Github", url: "https://github.com/gantumurbattumur/mini-recon-ai", type: "github" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Mongolian LLM Benchmark",
+    type: "ML Research",
+    category: "AI/ML",
+    year: "2025",
+    description: "Created the first systematic benchmark for evaluating Mongolian Large Language Models. Built a reproducible evaluation pipeline using lm-evaluation-harness to test models on reasoning, knowledge, syntax, and semantics tasks. Identified 30-40% performance gaps vs English baselines, providing open-source results for the ML community.",
+    tech: [
+      "Python",
+      "lm-evaluation-harness",
+      "Hugging Face",
+      "Shell Scripting",
+      "ML Benchmarking",
+      "Cross-lingual NLP"
+    ],
+    image: "/mongolian-llm.svg", // Benchmark comparison chart
+    links: [
+      { label: "Github", url: "https://github.com/gantumurbattumur/Mongolian-LLM-Leaderboard", type: "github" }
     ]
   }
 ];

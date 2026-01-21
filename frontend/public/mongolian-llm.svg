@@ -1,0 +1,50 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  
+  <!-- Grid lines -->
+  <g stroke="#334155" stroke-width="1" opacity="0.3">
+    <line x1="100" y1="350" x2="700" y2="350"/>
+    <line x1="100" y1="280" x2="700" y2="280"/>
+    <line x1="100" y1="210" x2="700" y2="210"/>
+    <line x1="100" y1="140" x2="700" y2="140"/>
+  </g>
+  
+  <!-- Chart bars - English (blue) -->
+  <rect x="150" y="140" width="60" height="210" fill="#3b82f6" rx="4"/>
+  <rect x="350" y="160" width="60" height="190" fill="#3b82f6" rx="4"/>
+  <rect x="550" y="190" width="60" height="160" fill="#3b82f6" rx="4"/>
+  
+  <!-- Chart bars - Mongolian (orange) -->
+  <rect x="220" y="200" width="60" height="150" fill="#f97316" rx="4"/>
+  <rect x="420" y="220" width="60" height="130" fill="#f97316" rx="4"/>
+  <rect x="620" y="250" width="60" height="100" fill="#f97316" rx="4"/>
+  
+  <!-- Labels -->
+  <text x="195" y="385" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Llama-3.2-3B</text>
+  <text x="395" y="385" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">BTLM-3B</text>
+  <text x="595" y="385" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">StableCode-3B</text>
+  
+  <!-- Y-axis labels -->
+  <text x="90" y="355" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" text-anchor="end">0%</text>
+  <text x="90" y="285" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" text-anchor="end">25%</text>
+  <text x="90" y="215" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" text-anchor="end">50%</text>
+  <text x="90" y="145" fill="#94a3b8" font-family="Arial, sans-serif" font-size="12" text-anchor="end">75%</text>
+  
+  <!-- Title -->
+  <text x="400" y="50" fill="#f8fafc" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">🏔️ Mongolian LLM Benchmark</text>
+  <text x="400" y="80" fill="#94a3b8" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Cross-Lingual Performance Comparison</text>
+  
+  <!-- Legend -->
+  <rect x="280" y="410" width="20" height="15" fill="#3b82f6" rx="2"/>
+  <text x="310" y="422" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="13">English</text>
+  <rect x="400" y="410" width="20" height="15" fill="#f97316" rx="2"/>
+  <text x="430" y="422" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="13">Mongolian</text>
+</svg>

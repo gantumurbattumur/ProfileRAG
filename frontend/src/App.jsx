@@ -1,19 +1,42 @@
 import { useState, useRef, useEffect } from "react";
 import ChatInput from "./components/ChatInput";
 import ActionCards from "./components/ActionCards";
-import ThemeToggle from "./components/ThemeToggle";
-import ProjectsWithFilter from "./components/ProjectsWithFilter";
+import ProjectCard from "./components/ProjectCard";
 import SkillsCard from "./components/SkillsCard";
 import ExperienceCard from "./components/ExperienceCard";
-import AboutMeCard from "./components/AboutMeCard";
-import ContactForm from "./components/ContactForm";
 import { chat } from "./api";
-import { experience } from "./data/profile";
+import { projects, experience, skills, contact } from "./data/profile";
+
+// Static section keywords
+const SECTION_KEYWORDS = {
+  about: ["tell me about gana", "about gana", "who is gana", "about yourself"],
+  projects: ["show projects", "projects", "what projects", "your projects"],
+  skills: ["what skills", "skills", "your skills", "technologies"],
+  experience: ["work experience", "experience", "job history", "where worked"],
+};
+
+function detectSection(query) {
+  const q = query.toLowerCase().trim();
+  for (const [section, keywords] of Object.entries(SECTION_KEYWORDS)) {
+    if (keywords.some(k => q.includes(k) || q === k)) {
+      return section;
+    }
+  }
+  return null;
+}
+
+// Static about response
+const aboutContent = `I'm Gana — a software engineer passionate about building AI-powered applications that solve real problems.
+
+I specialize in full-stack development with a focus on LLMs, RAG systems, and production-grade backends. Currently based in Seattle, open to opportunities.
+
+• Email: ${contact.email}
+• Location: ${contact.location}
+• LinkedIn: linkedin.com/in/gantumur-battumur`;
 
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [activeView, setActiveView] = useState(null); // 'projects', 'skills', 'experience', 'contact' or null
   const chatInputRef = useRef(null);
   const messagesRef = useRef(null);
 
@@ -24,185 +47,155 @@ export default function App() {
   const sendQuery = async (queryText) => {
     if (!queryText.trim() || loading) return;
 
-    setLoading(true);
-
-    // Add user message immediately
+    const section = detectSection(queryText);
     handleSendMessage({ role: "user", content: queryText });
 
+    // Handle static sections
+    if (section === "about") {
+      handleSendMessage({ role: "assistant", content: aboutContent });
+      return;
+    }
+    if (section === "projects") {
+      handleSendMessage({ role: "assistant", content: "Here are my projects:", viewType: "projects" });
+      return;
+    }
+    if (section === "skills") {
+      handleSendMessage({ role: "assistant", content: "Here are my technical skills:", viewType: "skills" });
+      return;
+    }
+    if (section === "experience") {
+      handleSendMessage({ role: "assistant", content: "Here's my work experience:", viewType: "experience" });
+      return;
+    }
+
+    // Use RAG for other questions
+    setLoading(true);
     try {
-      // Build conversation history from existing messages
       const conversationHistory = messages
-        .slice(-6) // Keep last 3 exchanges (6 messages)
+        .slice(-6)
         .map(m => ({ role: m.role, content: m.content }));
 
       const response = await chat(queryText, conversationHistory);
-
-      // Don't attach sources to assistant message for security / privacy in UI
-      handleSendMessage({
-        role: "assistant",
-        content: response.answer,
-        isCustomView: activeView === "aboutMe"
-      });
+      handleSendMessage({ role: "assistant", content: response.answer });
     } catch (error) {
       handleSendMessage({
         role: "assistant",
-        content: `Sorry, I encountered an error: ${error.message}. Please try again.`
+        content: `Sorry, I encountered an error. Please try again.`
       });
     } finally {
       setLoading(false);
     }
   };
 
-  const handleActionClick = (action) => {
-    // Handle special views that show custom components
-    if (action === "Projects") {
-      setActiveView("projects");
-      handleSendMessage({ role: "user", content: "What are your projects?" });
-      handleSendMessage({
-        role: "assistant",
-        content: "Sure, I can show you my projects",
-        isCustomView: true
-      });
-    } else if (action === "Skills") {
-      setActiveView("skills");
-      handleSendMessage({ role: "user", content: "What are your skills? Give me a list of your soft and hard skills." });
-      handleSendMessage({
-        role: "assistant",
-        content: "Sure, I can list my skills for you",
-        isCustomView: true
-      });
-    } else if (action === "Experience") {
-      setActiveView("experience");
-      handleSendMessage({ role: "user", content: "What is your work experience?" });
-      handleSendMessage({
-        role: "assistant",
-        content: "Here's my work experience",
-        isCustomView: true
-      });
-    } else if (action === "AboutMe") {
-      setActiveView("aboutMe");
-      handleSendMessage({ role: "user", content: "Tell me about yourself" });
-      handleSendMessage({
-        role: "assistant",
-        content: "Here's information about me",
-        isCustomView: true
-      });
-    } else if (action === "Contact") {
-      setActiveView("contact");
-      handleSendMessage({ role: "user", content: "Contact me" });
-      handleSendMessage({
-        role: "assistant",
-        content: "Send me a message directly",
-        isCustomView: true
-      });
-    } else {
-      // For regular chat queries
-      setActiveView(null);
-      sendQuery(action);
-    }
-  };
-
-  // Auto-scroll to bottom when messages change
   useEffect(() => {
     const el = messagesRef.current;
     if (el) {
       el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
     }
-  }, [messages, activeView]);
+  }, [messages]);
 
   const handleHomeClick = () => {
-    // Reset to home state
     setMessages([]);
-    setActiveView(null);
-    // Clear input
-    if (chatInputRef && chatInputRef.current && chatInputRef.current.setQuery) {
+    if (chatInputRef?.current?.setQuery) {
       chatInputRef.current.setQuery('');
     }
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col items-center justify-center px-4 relative">
-      {/* Home button */}
-      <button
-        onClick={handleHomeClick}
-        className="absolute top-6 left-6 bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 shadow-sm rounded-full px-4 py-2 text-sm flex items-center gap-2 hover:scale-105 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
-        aria-label="Home"
-      >
-        Home
-      </button>
+    <div
+      className="min-h-screen flex flex-col items-center justify-center px-4 relative"
+      style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
+    >
+      {messages.length > 0 && (
+        <button
+          onClick={handleHomeClick}
+          className="absolute top-6 left-6 rounded-full px-4 py-2 text-sm hover:opacity-80 transition"
+          style={{
+            backgroundColor: 'white',
+            color: 'var(--text-secondary)',
+            border: '1px solid var(--border)',
+          }}
+        >
+          Home
+        </button>
+      )}
 
-      <ThemeToggle />
-
-      {/* Main content */}
-      <div className="flex flex-col items-center w-full max-w-4xl">
-        {/* Show home hero only when no messages */}
+      <div className="flex flex-col items-center w-full max-w-2xl">
         {messages.length === 0 ? (
-          <ActionCards onActionClick={handleActionClick} />
+          <ActionCards onActionClick={sendQuery} />
         ) : (
           <>
-            {/* Chat messages container - shown when messages exist */}
-            <div ref={messagesRef} className="w-full max-w-4xl mb-6 space-y-4 max-h-[520px] overflow-y-auto pt-4 pb-4">
+            <div ref={messagesRef} className="w-full mb-6 space-y-4 max-h-[65vh] overflow-y-auto py-4">
               {messages.map((msg, idx) => (
                 <div key={idx}>
-                  {/* Regular chat message */}
-                  {!msg.isCustomView && (
-                    <div
-                      className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                    >
+                  {/* User message */}
+                  {msg.role === "user" && (
+                    <div className="flex justify-end">
                       <div
-                        className={`max-w-[80%] rounded-lg px-4 py-2 shadow ${msg.role === "user"
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100"
-                          }`}
+                        className="max-w-[85%] rounded-2xl px-4 py-3"
+                        style={{ backgroundColor: 'var(--accent)', color: 'white' }}
                       >
-                        <p className="whitespace-pre-wrap">{msg.content}</p>
+                        <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
                       </div>
                     </div>
                   )}
 
-                  {/* Custom view components */}
-                  {msg.isCustomView && msg.role === "assistant" && (
-                    <div className="space-y-4">
-                      {/* Assistant message */}
+                  {/* Assistant message */}
+                  {msg.role === "assistant" && (
+                    <div className="space-y-3">
                       <div className="flex justify-start">
-                        <div className="max-w-[80%] rounded-lg px-4 py-2 shadow bg-gray-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100">
-                          <p>{msg.content}</p>
+                        <div
+                          className="max-w-[85%] rounded-2xl px-4 py-3"
+                          style={{
+                            backgroundColor: 'white',
+                            color: 'var(--text-primary)',
+                            border: '1px solid var(--border)',
+                          }}
+                        >
+                          <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
                         </div>
                       </div>
 
-                      {/* Projects View */}
-                      {activeView === "projects" && (
-                        <ProjectsWithFilter />
+                      {/* Projects cards */}
+                      {msg.viewType === "projects" && (
+                        <div className="space-y-3 mt-2">
+                          {projects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                          ))}
+                        </div>
                       )}
 
-                      {/* Skills View */}
-                      {activeView === "skills" && <SkillsCard />}
+                      {/* Skills card */}
+                      {msg.viewType === "skills" && (
+                        <div className="mt-2">
+                          <SkillsCard />
+                        </div>
+                      )}
 
-                      {/* Experience View */}
-                      {activeView === "experience" && (
-                        <div className="space-y-4">
+                      {/* Experience cards */}
+                      {msg.viewType === "experience" && (
+                        <div className="space-y-3 mt-2">
                           {experience.map((exp) => (
                             <ExperienceCard key={exp.id} experience={exp} />
                           ))}
                         </div>
                       )}
-
-                      {/* About Me View */}
-                      {activeView === "aboutMe" && (
-                        <AboutMeCard />
-                      )}
-
-                      {/* Contact View */}
-                      {activeView === "contact" && (
-                        <ContactForm />
-                      )}
                     </div>
                   )}
                 </div>
               ))}
+              {loading && (
+                <div className="flex justify-start">
+                  <div
+                    className="rounded-2xl px-4 py-3"
+                    style={{ backgroundColor: 'white', border: '1px solid var(--border)' }}
+                  >
+                    <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Thinking...</span>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Chat input - shown when messages exist */}
             <ChatInput
               onSendMessage={handleSendMessage}
               onQuery={sendQuery}
@@ -210,9 +203,9 @@ export default function App() {
               ref={chatInputRef}
             />
 
-            {/* Always show section buttons at the bottom */}
+            {/* Quick prompts at bottom */}
             <div className="w-full mt-4">
-              <ActionCards onActionClick={handleActionClick} isChat={true} />
+              <ActionCards onActionClick={sendQuery} isChat={true} />
             </div>
           </>
         )}
