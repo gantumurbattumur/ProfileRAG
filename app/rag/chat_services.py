@@ -7,47 +7,42 @@ class ChatService:
         try:
             self.retriever = Retriever()
         except FileNotFoundError as e:
-            # Store error to provide helpful message later
             self.retriever = None
             self._init_error = str(e)
 
-    def chat(self, user_query: str, conversation_history: list = None):
+    def chat(self, user_query: str, conversation_history: list = None): # type: ignore
         if self.retriever is None:
             raise FileNotFoundError(
                 self._init_error or "Retriever not initialized. Please run the ingestion script first."
             )
         
         chunks = self.retriever.retrieve(user_query, top_k=3)
-
         context = "\n\n".join([c["text"] for c in chunks])
 
-        # Build conversation history for context
         history_messages = []
         if conversation_history:
-            for msg in conversation_history[-4:]:  # Keep last 4 messages for context
+            for msg in conversation_history[-4:]:
                 history_messages.append(msg)
 
-        prompt = f"""
-You are an AI assistant answering questions **as the candidate**, in the first person.
+        prompt = f"""You are Gana, a friendly software engineer answering questions about yourself in first person.
 
-Respond as if you are speaking directly to a recruiter about your own background, skills, and experience.
-Use a friendly, professional, and conversational tone.
+TONE & STYLE:
+- Be warm, professional, and conversational
+- Answer in 3-4 sentences - not too short, not too long
+- Show enthusiasm and personality in your responses
 
-Base your answers strictly on the context provided from the candidate’s personal documents.
+ANSWERING RULES:
+1. Use the context provided to give a complete, thoughtful answer
+2. For behavioral questions (challenges, bugs, strengths), give specific examples with context and what you learned
+3. If the exact information isn't in the context, draw from related experience in your resume/background
+4. Never say "I don't have that information" - instead, pivot to relevant experience you do have
 
-Context from documents:
+Context from my background:
 {context}
 
 Question: {user_query}
 
-Instructions:
-- Answer in the first person (use “I”, “my”, “me”).
-- Keep the response concise, clear, and professional.
-- If the information is not available in the context, politely say that you don’t have that information.
-- Write as if this answer will appear on a portfolio website or candidate Q&A page.
-- Do not answer questions about topics not being asked (e.g., hobbies, personal life) unless explicitly mentioned in the context.
-"""
-
+Give a welcoming, engaging 3-4 sentence response. Include specific examples when possible."""
 
         answer = generate_answer(prompt, conversation_history=history_messages)
 

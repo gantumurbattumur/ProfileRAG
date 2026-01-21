@@ -29,6 +29,51 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
         return ""
 
 
+def process_json_file(file_path: Path) -> list:
+    """Process JSON file and return list of chunks with metadata."""
+    results = []
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        # Handle array of Q&A items
+        if isinstance(data, list):
+            for item in data:
+                if isinstance(item, dict):
+                    # Create a text representation combining question and answer
+                    text_parts = []
+                    if "question" in item:
+                        text_parts.append(f"Q: {item['question']}")
+                    if "answer" in item:
+                        text_parts.append(f"A: {item['answer']}")
+                    
+                    if text_parts:
+                        text = "\n".join(text_parts)
+                        meta = {
+                            "source": str(file_path.name),
+                            "text": text,
+                        }
+                        # Preserve additional metadata for filtering
+                        for key in ["id", "category", "topic", "audience", "role", "seniority"]:
+                            if key in item:
+                                meta[key] = item[key]
+                        results.append(meta)
+        
+        # Handle single object with content field
+        elif isinstance(data, dict):
+            if "content" in data:
+                text = data["content"]
+                results.append({
+                    "source": str(file_path.name),
+                    "text": text,
+                    **{k: v for k, v in data.items() if k != "content"}
+                })
+    except Exception as e:
+        print(f"Error reading JSON {file_path}: {e}")
+    
+    return results
+
+
 def ingest_docs():
     """Ingest documents from data/raw directory and create embeddings."""
     EMBED_DIR.mkdir(parents=True, exist_ok=True)
@@ -66,6 +111,13 @@ def ingest_docs():
                     "source": str(file.name),
                     "text": chunk
                 })
+
+    # Process JSON files (Q&A pairs, structured data)
+    for file in RAW_DIR.glob("*.json"):
+        json_items = process_json_file(file)
+        for item in json_items:
+            texts.append(item["text"])
+            metadata.append(item)
 
     if not texts:
         raise ValueError(f"No documents found in {RAW_DIR}. Please add some documents (.md or .pdf files).")

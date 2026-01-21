@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import DayInLife from "./RunnerGame";
 
 // Quick prompt suggestions
 const prompts = [
@@ -51,6 +52,9 @@ export default function ActionCards({ onActionClick, isChat = false }) {
   // Home: minimal centered design
   return (
     <div className="w-full flex flex-col items-center max-w-xl mx-auto">
+      {/* Day in Life Animation */}
+      <DayInLife />
+
       {/* Simple headline */}
       <h1
         className="text-2xl sm:text-3xl font-medium mb-8 text-center"

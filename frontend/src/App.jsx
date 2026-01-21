@@ -32,7 +32,47 @@ I specialize in full-stack development with a focus on LLMs, RAG systems, and pr
 
 • Email: ${contact.email}
 • Location: ${contact.location}
-• LinkedIn: linkedin.com/in/gantumur-battumur`;
+• LinkedIn: [linkedin.com/in/gantumur-battumur](https://linkedin.com/in/gantumur-battumur)
+
+📄 [Download Resume](/Gana_Battumur_Resume.pdf)`;
+
+// Helper to render markdown-style links
+function renderContent(content) {
+  // Match markdown links: [text](url)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(content)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(content.slice(lastIndex, match.index));
+    }
+    // Add the link
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target={match[2].startsWith('/') ? '_self' : '_blank'}
+        rel="noopener noreferrer"
+        download={match[2].endsWith('.pdf')}
+        className="inline-flex items-center gap-1 font-medium hover:underline"
+        style={{ color: 'var(--accent)' }}
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < content.length) {
+    parts.push(content.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : content;
+}
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -152,7 +192,7 @@ export default function App() {
                             border: '1px solid var(--border)',
                           }}
                         >
-                          <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
+                          <p className="whitespace-pre-wrap leading-relaxed">{renderContent(msg.content)}</p>
                         </div>
                       </div>
 
