@@ -1,12 +1,23 @@
 from app.rag.retriever import Retriever
 from app.llm.client import generate_answer
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class ChatService:
     def __init__(self):
         try:
+            logger.info("Initializing ChatService and Retriever...")
             self.retriever = Retriever()
+            logger.info("ChatService initialized successfully!")
         except FileNotFoundError as e:
+            logger.error(f"Failed to initialize Retriever: {e}")
+            self.retriever = None
+            self._init_error = str(e)
+        except Exception as e:
+            logger.error(f"Unexpected error initializing ChatService: {e}")
             self.retriever = None
             self._init_error = str(e)
 

@@ -2,13 +2,33 @@
 const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 /**
+ * Helper to retry requests with exponential backoff (for cold starts)
+ */
+async function fetchWithRetry(url, options, maxRetries = 3) {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      const res = await fetch(url, options);
+      // If we get a response (even error), return it
+      return res;
+    } catch (error) {
+      // Network error or 502 - backend might be cold starting
+      if (i === maxRetries - 1) throw error;
+      
+      // Wait before retry (exponential backoff: 2s, 4s, 8s)
+      const delay = Math.pow(2, i + 1) * 1000;
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+}
+
+/**
  * Send a chat query to the RAG backend.
  * @param {string} query - The user's question
  * @param {Array} conversationHistory - Previous messages for context
  * @returns {Promise<{answer: string, sources: string[]}>}
  */
 export async function chat(query, conversationHistory = []) {
-  const res = await fetch(`${API_BASE}/chat`, {
+  const res = await fetchWithRetry(`${API_BASE}/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

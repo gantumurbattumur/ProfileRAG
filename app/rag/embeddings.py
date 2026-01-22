@@ -1,27 +1,43 @@
 # embedding generation
-from sentence_transformers import SentenceTransformer
 import numpy as np
 from dotenv import load_dotenv
 import os
+import logging
+from openai import OpenAI
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
-MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2")
 
-# Cache the model to avoid reloading on every call
-_model_cache = None
+# Use OpenAI embeddings (lightweight - no heavy model to load)
+OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"
 
-def get_model():
-    global _model_cache
-    if _model_cache is None:
-        _model_cache = SentenceTransformer(MODEL_NAME)
-    return _model_cache
+# Initialize OpenAI client
+_client = None
+
+def get_client():
+    global _client
+    if _client is None:
+        _client = OpenAI()
+        logger.info("OpenAI client initialized for embeddings")
+    return _client
 
 def embed_docs(texts: list[str]) -> np.ndarray:
-    model = get_model()
-    embeddings = model.encode(texts, normalize_embeddings=True)
+    """Embed multiple documents using OpenAI API"""
+    client = get_client()
+    response = client.embeddings.create(
+        model=OPENAI_EMBEDDING_MODEL,
+        input=texts
+    )
+    embeddings = [item.embedding for item in response.data]
     return np.asarray(embeddings, dtype="float32")
 
 def embed_query(query: str) -> np.ndarray:
-    model = get_model()
-    query_emb = model.encode([query], normalize_embeddings=True)
-    return np.asarray(query_emb, dtype="float32")
+    """Embed a single query using OpenAI API"""
+    client = get_client()
+    response = client.embeddings.create(
+        model=OPENAI_EMBEDDING_MODEL,
+        input=[query]
+    )
+    return np.asarray([response.data[0].embedding], dtype="float32")
