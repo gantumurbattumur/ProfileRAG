@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL_NAME: str = "sentence-transformers/all-MiniLM-L6-v2"
     
     # CORS Configuration - comma-separated list of allowed origins
-    ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174"
+    ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174,https://ganabattumur.com,https://www.ganabattumur.com,https://profilerag-frontend.onrender.com"
     
     # Rate Limiting
     RATE_LIMIT_REQUESTS: int = 100  # requests per window
