@@ -42,10 +42,20 @@ export async function chat(query, conversationHistory = []) {
   if (!res.ok) {
     // Handle rate limiting
     if (res.status === 429) {
-      throw new Error("Too many requests. Please wait a moment and try again.");
+      throw new Error("You're asking questions too quickly! Please wait a moment and try again.");
     }
+    // Handle bad requests
+    if (res.status === 400) {
+      const error = await res.json().catch(() => ({ detail: "Invalid request" }));
+      throw new Error(error.detail || "Please check your message and try again.");
+    }
+    // Handle server errors
+    if (res.status >= 500) {
+      throw new Error("The AI service is temporarily unavailable. Please try again in a moment.");
+    }
+    
     const error = await res.json().catch(() => ({ detail: "Request failed" }));
-    throw new Error(error.detail || "Request failed");
+    throw new Error(error.detail || "Something went wrong. Please try again.");
   }
 
   return res.json();
@@ -68,10 +78,20 @@ export async function submitContact(data) {
   if (!res.ok) {
     // Handle rate limiting
     if (res.status === 429) {
-      throw new Error("Too many submissions. Please wait a few minutes and try again.");
+      throw new Error("Too many submissions. Please wait a few minutes before trying again.");
     }
+    // Handle validation errors
+    if (res.status === 400) {
+      const error = await res.json().catch(() => ({ detail: "Invalid form data" }));
+      throw new Error(error.detail || "Please check your form and try again.");
+    }
+    // Handle server errors
+    if (res.status >= 500) {
+      throw new Error("Unable to send message at this time. Please try reaching out via LinkedIn.");
+    }
+    
     const error = await res.json().catch(() => ({ detail: "Request failed" }));
-    throw new Error(error.detail || "Request failed");
+    throw new Error(error.detail || "Failed to send message. Please try again.");
   }
 
   return res.json();

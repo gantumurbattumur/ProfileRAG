@@ -51,5 +51,13 @@ async def chat(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing chat request: {str(e)}")
+        # Log the error for debugging
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.error(f"Chat error: {str(e)}", exc_info=True)
+        
+        raise HTTPException(
+            status_code=500, 
+            detail="I'm having trouble processing your question right now. Please try again in a moment."
+        )
 
