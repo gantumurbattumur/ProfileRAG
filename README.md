@@ -41,37 +41,16 @@ The system retrieves relevant information from my resume and documents, then gen
 - **AI**: OpenAI GPT-4, RAG pipeline
 - **Deployment**: Render (backend + frontend)
 
-## Quick Start (Local Development)
+## Project Structure
 
-```bash
-# Clone the repo
-git clone https://github.com/gantumurbattumur/ProfileRAG.git
-cd ProfileRAG
+This repository showcases the implementation of a production RAG system. The code is public to demonstrate my technical approach, but deployment configuration has been removed.
 
-# Backend setup
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-# Set up environment
-cp .env.example .env
-# Edit .env with your OPENAI_API_KEY
-
-# Ingest documents
-python scripts/ingest_docs.py
-
-# Run backend
-uvicorn app.main:app --reload --port 8000
-
-# Frontend (new terminal)
-cd frontend
-npm install
-npm run dev
-```
-
-## Deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions on deploying to Render, Railway, or Fly.io.
+**Key Components:**
+- `app/rag/` - RAG pipeline (chunking, embeddings, retrieval)
+- `app/llm/` - LLM client and guardrails
+- `app/api/` - FastAPI endpoints
+- `frontend/` - React UI with chat interface
+- `data/raw/` - Source documents (resumes, portfolios)
 
 ---
 
