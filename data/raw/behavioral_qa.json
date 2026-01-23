@@ -2,7 +2,7 @@
     {
         "id": "behavioral_challenge_01",
         "question": "Tell me about the most challenging technical problem you worked on.",
-        "answer": "One of the most challenging problems I worked on was improving answer relevance in my portfolio RAG application. Although the model produced fluent responses, they were not aligned with recruiter expectations. I identified this as a data and retrieval issue rather than a model issue and redesigned the question set and chunking strategy. This significantly improved response quality and realism.",
+        "answer": "At F5 Networks, I had to automate PSU validation workflows that involved diagnosing hardware failures in real-time. The challenge was handling inconsistent sensor data and edge cases where failures were silent or intermittent. I built fault detection logic that tracked historical patterns and flagged anomalies early. This reduced manual QA testing by 70% and prevented recurring calibration failures.",
         "category": "interview_behavioral",
         "topic": "challenge",
         "audience": "recruiter",
@@ -15,7 +15,7 @@
     {
         "id": "behavioral_challenge_02",
         "question": "Describe a bug that took a long time to fix.",
-        "answer": "While working on a RAG ingestion pipeline, I encountered inconsistent retrieval results that were difficult to reproduce. After systematic debugging, I traced the issue to overlapping chunks and embedding granularity. Adjusting chunk sizes and adding query re-ranking stabilized the results. This taught me how small design decisions can significantly affect downstream behavior.",
+        "answer": "While building EaseeVocab, I encountered a subtle latency issue where batch LLM requests would randomly timeout. After debugging, I discovered the async tasks weren't properly awaiting database writes, causing race conditions. I refactored the pipeline to separate inference from I/O operations and added proper error handling. This reduced generation latency by 40% and stabilized the system.",
         "category": "interview_behavioral",
         "topic": "debugging",
         "audience": "recruiter",
@@ -28,7 +28,7 @@
     {
         "id": "behavioral_challenge_03",
         "question": "Tell me about a time something you built didn't work as expected.",
-        "answer": "My initial version of the portfolio RAG app answered questions correctly but failed to satisfy recruiter-style behavioral questions. The system was technically functional but product-wise ineffective. I treated this as a user-alignment failure and redesigned the dataset around real interview signals. This resulted in much more realistic and useful answers.",
+        "answer": "My first version of EaseeVocab generated stories that were grammatically correct but didn't actually help users learn vocabulary. The LLM was optimizing for fluency instead of educational value. I redesigned the prompts to emphasize word usage in context and added examples to the RAG retrieval. This made the stories more effective for actual learning.",
         "category": "interview_behavioral",
         "topic": "failure",
         "audience": "recruiter",
@@ -41,7 +41,7 @@
     {
         "id": "behavioral_challenge_04",
         "question": "What's the hardest part of building LLM-based systems?",
-        "answer": "The hardest part is aligning model outputs with real user intent. In my RAG project, the model could answer almost anything, but relevance depended heavily on data curation and prompt structure. I learned that evaluation and dataset design matter more than raw model capability. This changed how I approach AI system design.",
+        "answer": "The hardest part is controlling output quality when behavior is non-deterministic. In EaseeVocab, small prompt changes caused large output variations. I learned to treat it like a control system: define clear success criteria, log outputs systematically, and iterate based on real user patterns. Evaluation and prompt engineering matter more than model selection.",
         "category": "interview_behavioral",
         "topic": "llm_systems",
         "audience": "recruiter",
@@ -53,7 +53,7 @@
     {
         "id": "behavioral_challenge_05",
         "question": "Tell me about a time you had to debug something unfamiliar.",
-        "answer": "During my Ubuntu OS research project, I frequently had to debug unfamiliar subsystems in a large codebase. I started by tracing execution paths, reading documentation, and isolating behavior through small experiments. This approach helped me build a mental model before making changes. It made me more confident working in large systems.",
+        "answer": "At F5, I had to debug internal automation frameworks I'd never seen before. I started by tracing execution flow, adding print statements to isolate behavior, and reading existing test cases. I built a mental model by running small experiments. This methodical approach helped me confidently make changes and improved my ability to work in large codebases.",
         "category": "interview_behavioral",
         "topic": "debugging",
         "audience": "recruiter",
@@ -65,7 +65,7 @@
     {
         "id": "behavioral_decision_01",
         "question": "Why did you choose RAG instead of fine-tuning?",
-        "answer": "I chose RAG because my data changes frequently and is highly specific to my experience. Fine-tuning would be less flexible and slower to iterate on. RAG allowed me to update content quickly and experiment with retrieval strategies. This better matched my product goals.",
+        "answer": "For EaseeVocab, I needed the system to adapt as I added new vocabulary and examples. Fine-tuning would lock the model to a specific snapshot and require expensive retraining. RAG let me update the knowledge base instantly and experiment with retrieval strategies. The flexibility was worth the added complexity.",
         "category": "interview_behavioral",
         "topic": "decision_making",
         "audience": "recruiter",
@@ -77,7 +77,7 @@
     {
         "id": "behavioral_decision_02",
         "question": "What alternatives did you consider?",
-        "answer": "I considered static FAQ pages and prompt-only approaches. However, they lacked adaptability and grounding in real experience. RAG provided structured retrieval with dynamic responses, which justified the added complexity. This tradeoff made the system more useful.",
+        "answer": "For EaseeVocab, I considered using prompt-only approaches with few-shot examples or building a rule-based template system. The prompt-only approach lacked grounding in real vocabulary data, and templates were too rigid. RAG provided the right balance of structure and flexibility for generating educational content.",
         "category": "interview_behavioral",
         "topic": "tradeoffs",
         "audience": "recruiter",
@@ -90,7 +90,7 @@
     {
         "id": "behavioral_decision_03",
         "question": "How do you evaluate whether something is good enough?",
-        "answer": "I evaluate solutions based on whether they meet real user expectations. In my RAG app, fluency was not enough; recruiter realism was the key metric. I manually evaluated answers against actual interview standards. This guided further iteration.",
+        "answer": "I define clear success metrics upfront. At F5, 'good enough' meant reducing QA testing time while maintaining reliability. For EaseeVocab, it meant generating stories that actually helped users remember words. I validated against those metrics through testing and user feedback, not just technical correctness.",
         "category": "interview_behavioral",
         "topic": "evaluation",
         "audience": "recruiter",
@@ -103,7 +103,7 @@
     {
         "id": "behavioral_learning_01",
         "question": "How do you learn a new technology?",
-        "answer": "I learn by building small, focused prototypes. For RAG systems, I experimented with chunking and retrieval methods before full integration. This hands-on approach helps me understand tradeoffs quickly and retain knowledge.",
+        "answer": "I learn by building small prototypes. When learning FastAPI for EaseeVocab, I started with a simple endpoint and incrementally added features like async requests, database integration, and error handling. This hands-on approach helps me understand tradeoffs quickly and build intuition faster than reading documentation alone.",
         "category": "interview_behavioral",
         "topic": "learning",
         "audience": "recruiter",
@@ -116,7 +116,7 @@
     {
         "id": "behavioral_learning_02",
         "question": "What technology was hardest for you initially?",
-        "answer": "Understanding retrieval behavior in RAG systems was initially challenging because small changes produced large output differences. Through experimentation and debugging, I developed intuition for how embeddings and chunking interact. This improved my system design skills.",
+        "answer": "Asynchronous programming in Python was initially confusing because of how async/await changes execution flow. I debugged by adding extensive logging and running isolated test cases. Once I understood the event loop model and how to properly await coroutines, it clicked. Now I use async patterns confidently in my projects.",
         "category": "interview_behavioral",
         "topic": "learning",
         "audience": "recruiter",
@@ -128,7 +128,7 @@
     {
         "id": "behavioral_learning_03",
         "question": "How do you handle not knowing something?",
-        "answer": "I start by narrowing the problem and validating assumptions. I read documentation, inspect behavior, and test small changes. This methodical approach has worked well for both large codebases and AI systems.",
+        "answer": "I break the problem down and validate my assumptions systematically. At F5, when I encountered unfamiliar hardware diagnostics, I started by reading existing code, running small tests, and asking targeted questions. I document what I learn so I can reference it later. This methodical approach has worked well across different domains.",
         "category": "interview_behavioral",
         "topic": "learning",
         "audience": "recruiter",
@@ -141,7 +141,7 @@
     {
         "id": "behavioral_ownership_01",
         "question": "Tell me about a project you owned end-to-end.",
-        "answer": "I owned my portfolio RAG app end-to-end, from data collection to deployment. I designed the ingestion pipeline, retrieval logic, and prompt structure. I also evaluated outputs against recruiter expectations. This gave me full lifecycle ownership experience.",
+        "answer": "I owned EaseeVocab end-to-end, from initial design to deployment. I chose the tech stack, designed the RAG pipeline, built the frontend and backend, optimized LLM inference latency, and deployed it with Docker. I also handled user testing and iterated based on feedback. This gave me full-stack ownership experience.",
         "category": "interview_behavioral",
         "topic": "ownership",
         "audience": "recruiter",
@@ -154,7 +154,7 @@
     {
         "id": "behavioral_ownership_02",
         "question": "What part of a project are you most proud of?",
-        "answer": "I'm most proud of recognizing and fixing the gap between technically correct answers and recruiter-relevant answers. Addressing this significantly improved the system. It demonstrated strong product judgment.",
+        "answer": "At F5, I'm most proud of identifying that the real bottleneck wasn't the automation itself but the lack of structured logging for debugging failures. Adding proper data pipelines and dashboards made the system 10x more useful to engineering teams. It showed I was thinking beyond the immediate task.",
         "category": "interview_behavioral",
         "topic": "ownership",
         "audience": "recruiter",
@@ -167,7 +167,7 @@
     {
         "id": "behavioral_bonus_01",
         "question": "Why should we hire you?",
-        "answer": "I bring strong system-thinking skills and hands-on experience building AI applications end-to-end. I focus on aligning technology with real user decision-making. My projects demonstrate practical problem-solving rather than theory alone.",
+        "answer": "I bring hands-on experience building and deploying AI systems end-to-end, with a focus on solving real problems rather than just implementing features. My internship at F5 showed I can deliver measurable impact quickly. I'm excited to apply that same results-driven approach to your team.",
         "category": "interview_behavioral",
         "topic": "closing",
         "audience": "recruiter",
@@ -180,7 +180,7 @@
     {
         "id": "behavioral_bonus_02",
         "question": "What differentiates you from other candidates?",
-        "answer": "I build systems with user alignment in mind, not just technical correctness. My portfolio RAG project reflects real recruiter evaluation rather than idealized demos. That product mindset differentiates my work.",
+        "answer": "I focus on outcomes, not just technical correctness. At F5, I didn't just automate tests—I reduced QA time by 70%. For EaseeVocab, I didn't just build an LLM app—I optimized latency by 40% and reduced costs. I think about user value and business impact, not just clean code.",
         "category": "interview_behavioral",
         "topic": "closing",
         "audience": "recruiter",
@@ -193,7 +193,7 @@
     {
         "id": "behavioral_strength_01",
         "question": "What is your greatest strength?",
-        "answer": "My greatest strength is my ability to quickly learn and adapt to new technologies. I enjoy diving deep into complex systems and finding elegant solutions. For example, building this RAG portfolio app required me to learn embedding systems, vector databases, and prompt engineering in a short time.",
+        "answer": "I'm good at taking ambiguous problems and breaking them into clear, executable steps. At F5, I was given a broad goal—'automate PSU testing'—and turned it into a structured pipeline with fault detection, logging, and dashboards. I thrive when I can define the solution path myself.",
         "category": "interview_behavioral",
         "topic": "strength",
         "audience": "recruiter",
@@ -206,7 +206,7 @@
     {
         "id": "behavioral_strength_02",
         "question": "What are your strengths?",
-        "answer": "I'm a fast learner with strong problem-solving skills and attention to detail. I enjoy building systems end-to-end and take ownership of my work. I also communicate complex technical concepts clearly, which helps in team collaboration.",
+        "answer": "I learn quickly, communicate clearly, and take ownership of my work. I'm comfortable working independently or collaborating with teams. At Whitworth IT Support, I had to explain complex technical issues in simple terms to non-technical users, which taught me how to tailor communication to my audience.",
         "category": "interview_behavioral",
         "topic": "strength",
         "audience": "recruiter",
@@ -219,7 +219,7 @@
     {
         "id": "behavioral_weakness_01",
         "question": "What is your greatest weakness?",
-        "answer": "I sometimes spend too much time perfecting details when good enough would suffice. I'm learning to balance quality with velocity by setting clear milestones and timeboxing my work. This RAG project actually helped me practice shipping iteratively.",
+        "answer": "I sometimes over-engineer solutions when simpler approaches would work. For example, in EaseeVocab, I initially built a complex caching system when a basic in-memory cache would've been fine for the MVP. I'm learning to start simple and add complexity only when there's a clear need.",
         "category": "interview_behavioral",
         "topic": "weakness",
         "audience": "recruiter",
@@ -232,7 +232,7 @@
     {
         "id": "behavioral_weakness_02",
         "question": "What are your weaknesses?",
-        "answer": "I tend to be a perfectionist, which can slow me down. I'm actively working on this by adopting an iterative development approach and focusing on delivering value quickly. I've found that getting feedback early helps me prioritize better.",
+        "answer": "I tend to focus deeply on solving the immediate problem and sometimes miss the bigger picture. At F5, I initially focused only on automation without thinking about how teams would use the data. My mentor helped me realize that observability was just as important as the automation itself. Now I actively step back and ask 'what's the end goal here?'",
         "category": "interview_behavioral",
         "topic": "weakness",
         "audience": "recruiter",
