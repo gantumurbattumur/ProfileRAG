@@ -1,20 +1,23 @@
-from app.rag.retriever import Retriever
+from app.rag.retriever import get_retriever
 from app.llm.client import generate_answer
 
 
 class ChatService:
     def __init__(self):
-        try:
-            self.retriever = Retriever()
-        except FileNotFoundError as e:
-            self.retriever = None
-            self._init_error = str(e)
+        # Don't load retriever at init - lazy load on first use
+        self.retriever = None
+        self._init_error = None
 
     def chat(self, user_query: str, conversation_history: list = None): # type: ignore
+        # Lazy load retriever on first chat request
         if self.retriever is None:
-            raise FileNotFoundError(
-                self._init_error or "Retriever not initialized. Please run the ingestion script first."
-            )
+            try:
+                self.retriever = get_retriever()
+            except FileNotFoundError as e:
+                self._init_error = str(e)
+                raise FileNotFoundError(
+                    self._init_error or "Retriever not initialized. Please run the ingestion script first."
+                )
         
         chunks = self.retriever.retrieve(user_query, top_k=3)
         context = "\n\n".join([c["text"] for c in chunks])

@@ -1,27 +1,27 @@
-# embedding generation
-from sentence_transformers import SentenceTransformer
+# Lightweight embedding generation using OpenAI API
 import numpy as np
-from dotenv import load_dotenv
-import os
+from openai import OpenAI
+from app.core.config import settings
 
-load_dotenv()
-MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2")
+_client = None
 
-# Cache the model to avoid reloading on every call
-_model_cache = None
-
-def get_model():
-    global _model_cache
-    if _model_cache is None:
-        _model_cache = SentenceTransformer(MODEL_NAME)
-    return _model_cache
-
-def embed_docs(texts: list[str]) -> np.ndarray:
-    model = get_model()
-    embeddings = model.encode(texts, normalize_embeddings=True)
-    return np.asarray(embeddings, dtype="float32")
+def get_client():
+    """Get cached OpenAI client."""
+    global _client
+    if _client is None:
+        _client = OpenAI(api_key=settings.OPENAI_API_KEY)
+    return _client
 
 def embed_query(query: str) -> np.ndarray:
-    model = get_model()
-    query_emb = model.encode([query], normalize_embeddings=True)
-    return np.asarray(query_emb, dtype="float32")
+    """
+    Generate embedding for user query using OpenAI API.
+    Uses text-embedding-3-small (62M params, fast, cheap).
+    """
+    client = get_client()
+    response = client.embeddings.create(
+        model="text-embedding-3-small",
+        input=query,
+        dimensions=1536  # Standard dimension for text-embedding-3-small
+    )
+    embedding = response.data[0].embedding
+    return np.asarray([embedding], dtype="float32")
