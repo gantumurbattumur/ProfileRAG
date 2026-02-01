@@ -9,42 +9,10 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Will you now or in the future require sponsorship for employment visa status?\nA: No, I do not require sponsorship for employment visa status.",
+    "text": "Q: Will you now or in the future require sponsorship for employment?\nA: No, I do not require sponsorship.",
     "id": "work_auth_02",
     "category": "work_authorization",
     "topic": "sponsorship",
-    "audience": "recruiter"
-  },
-  {
-    "source": "personal_info.json",
-    "text": "Q: What is your current immigration or work authorization status?\nA: I am on F-1 Visa STEM OPT.",
-    "id": "work_auth_03",
-    "category": "work_authorization",
-    "topic": "visa_status",
-    "audience": "recruiter"
-  },
-  {
-    "source": "personal_info.json",
-    "text": "Q: Are you at least 18 years of age?\nA: Yes, I am at least 18 years of age.",
-    "id": "personal_01",
-    "category": "personal",
-    "topic": "age",
-    "audience": "recruiter"
-  },
-  {
-    "source": "personal_info.json",
-    "text": "Q: How old are you?\nA: I am 22 years old. I graduated recently and am excited to start my career as a software engineer!",
-    "id": "personal_02",
-    "category": "personal",
-    "topic": "age",
-    "audience": "recruiter"
-  },
-  {
-    "source": "personal_info.json",
-    "text": "Q: What is your age?\nA: I am 22 years old. I just graduated and am eager to contribute my skills to an innovative team!",
-    "id": "personal_03",
-    "category": "personal",
-    "topic": "age",
     "audience": "recruiter"
   },
   {
@@ -57,7 +25,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to work onsite, hybrid, or remotely?\nA: Yes, I am willing to work onsite, hybrid, or remotely within the United States.",
+    "text": "Q: Are you willing to work onsite, hybrid, or remotely?\nA: Yes, I am open to onsite, hybrid, or remote work within the United States.",
     "id": "location_02",
     "category": "work_preferences",
     "topic": "work_location",
@@ -65,7 +33,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to relocate within the United States?\nA: Yes, I am willing to relocate within the United States if required for the role.",
+    "text": "Q: Are you willing to relocate within the United States?\nA: Yes, I am willing to relocate if required for the role.",
     "id": "location_03",
     "category": "work_preferences",
     "topic": "relocation",
@@ -73,7 +41,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: What is your earliest available start date?\nA: My earliest available start date is February 15, 2026.",
+    "text": "Q: What is your earliest available start date?\nA: I am available to start on February 15, 2026.",
     "id": "availability_01",
     "category": "availability",
     "topic": "start_date",
@@ -81,7 +49,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you applying for full-time, part-time, or contract employment?\nA: I am applying for full-time employment, but I am open to any positions.",
+    "text": "Q: Are you applying for full-time, part-time, or contract employment?\nA: I am applying for full-time employment.",
     "id": "availability_02",
     "category": "availability",
     "topic": "employment_type",
@@ -97,7 +65,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: What is your required notice period?\nA: No notice period is needed. I can start immediately.",
+    "text": "Q: What is your required notice period?\nA: I can start immediately; no notice period is required.",
     "id": "availability_04",
     "category": "availability",
     "topic": "notice_period",
@@ -105,7 +73,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to work overtime or flexible hours?\nA: Yes, I am willing to work overtime or flexible hours if business needs require it.",
+    "text": "Q: Are you willing to work overtime or flexible hours?\nA: Yes, I am open to overtime or flexible hours as needed.",
     "id": "flexibility_01",
     "category": "work_preferences",
     "topic": "flexibility",
@@ -113,7 +81,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you open to working in different time zones?\nA: Yes, I am open to working in different time zones if the role supports distributed teams.",
+    "text": "Q: Are you open to working in different time zones?\nA: Yes, I am open to working across different time zones if the role supports it.",
     "id": "flexibility_02",
     "category": "work_preferences",
     "topic": "timezone",
@@ -121,7 +89,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to travel for work?\nA: Yes, I am willing to travel occasionally for work if required.",
+    "text": "Q: Are you willing to travel for work?\nA: Yes, I am open to occasional travel if required.",
     "id": "travel_01",
     "category": "work_preferences",
     "topic": "travel",
@@ -129,7 +97,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: What percentage of travel are you willing to accept?\nA: I am willing to accept up to 75% travel if applicable.",
+    "text": "Q: What percentage of travel are you willing to accept?\nA: I am open to up to 75% travel if applicable.",
     "id": "travel_02",
     "category": "work_preferences",
     "topic": "travel_percentage",
@@ -137,7 +105,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Do you consent to a background check?\nA: Yes, I consent to a background check and employment verification if required.",
+    "text": "Q: Do you consent to a background check?\nA: Yes, I consent to a background check if required.",
     "id": "background_01",
     "category": "compliance",
     "topic": "background_check",
@@ -145,7 +113,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to undergo a drug screening?\nA: Yes, I am willing to undergo a drug screening if required by company policy or law.",
+    "text": "Q: Are you willing to undergo a drug screening?\nA: Yes, I am willing to undergo a drug screening if required.",
     "id": "background_02",
     "category": "compliance",
     "topic": "drug_screening",
@@ -153,7 +121,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to comply with company policies related to data security?\nA: Yes, I am willing to comply with company policies related to data security and confidentiality.",
+    "text": "Q: Are you willing to comply with company policies related to data security?\nA: Yes, I will comply with company data security and confidentiality policies.",
     "id": "compliance_01",
     "category": "compliance",
     "topic": "security",
@@ -161,7 +129,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to sign a confidentiality or IP agreement?\nA: Yes, I am willing to sign a confidentiality or intellectual property agreement.",
+    "text": "Q: Are you willing to sign a confidentiality or IP agreement?\nA: Yes, I am willing to sign confidentiality or intellectual property agreements.",
     "id": "compliance_02",
     "category": "compliance",
     "topic": "nda",
@@ -177,7 +145,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you willing to undergo required training or certification?\nA: Yes, I am willing to undergo required training or certification for this role.",
+    "text": "Q: Are you willing to undergo required training or certification?\nA: Yes, I am open to training or certification required for the role.",
     "id": "training_01",
     "category": "professional_development",
     "topic": "training",
@@ -185,7 +153,7 @@
   },
   {
     "source": "personal_info.json",
-    "text": "Q: Are you open to technical assessments during the hiring process?\nA: Yes, I am open to role-specific assessments or technical evaluations during the hiring process.",
+    "text": "Q: Are you open to technical assessments during the hiring process?\nA: Yes, I am open to role-specific assessments or technical evaluations.",
     "id": "assessment_01",
     "category": "hiring_process",
     "topic": "assessment",
