@@ -6,6 +6,12 @@ __pycache__/
 .vscode/
 contact_messages.log
 
+# Documentation (temporary/generated files)
+PERFORMANCE.md
+test_first_request.sh
+docs/FIRST_REQUEST_FIX.md
+docs/PRE_DEPLOYMENT_CHECKLIST.md
+
 # Node
 frontend/node_modules/
 frontend/dist/
