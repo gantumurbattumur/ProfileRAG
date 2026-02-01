@@ -44,7 +44,7 @@ class Settings(BaseSettings):
         return [origin.strip() for origin in self.ALLOWED_ORIGINS.split(",") if origin.strip()]
     
     class Config:
-        env_file = "app/.env"
+        env_file = ".env"
         env_file_encoding = "utf-8"
         extra = "ignore"
 

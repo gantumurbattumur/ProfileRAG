@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends, Request
 from pydantic import BaseModel, EmailStr, field_validator
-import os
 from datetime import datetime
 import resend
 from app.core.security import contact_rate_limiter, sanitizer
@@ -98,26 +97,23 @@ async def send_contact(
             sanitized_message
         )
         
-        if not email_sent:
-            # If email fails, still log it locally as backup
-            log_file = settings.CONTACT_LOG_FILE
-            with open(log_file, "a") as f:
-                f.write(f"\n[{datetime.now().isoformat()}] ⚠️ EMAIL FAILED\n")
-                f.write(f"Name: {sanitized_name}\n")
-                f.write(f"Email: {sanitized_email}\n")
-                f.write(f"Message: {sanitized_message}\n")
-                f.write("-" * 50 + "\n")
+        # Also log to file as backup
+        log_file = settings.CONTACT_LOG_FILE
+        with open(log_file, "a") as f:
+            f.write(f"\n[{datetime.now().isoformat()}]\n")
+            f.write(f"Name: {sanitized_name}\n")
+            f.write(f"Email: {sanitized_email}\n")
+            f.write(f"Message: {sanitized_message}\n")
+            f.write(f"Email notification sent: {email_sent}\n")
+            f.write("-" * 50 + "\n")
         
         return {
             "success": True,
-            "message": "Thank you for reaching out! I'll get back to you soon."
+            "message": "Message received successfully"
         }
     except HTTPException:
         raise
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(
-            status_code=500, 
-            detail="Unable to send message at this time. Please try again later or reach out via LinkedIn."
-        )
+        raise HTTPException(status_code=500, detail=f"Error processing contact: {str(e)}")
