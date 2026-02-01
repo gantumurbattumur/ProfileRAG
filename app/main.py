@@ -33,7 +33,11 @@ app.include_router(contact.router, prefix="/api")
 
 @app.on_event("startup")
 async def startup_event():
-    """Pre-warm heavy components to avoid slow first request"""
+    """Pre-warm heavy components to avoid slow first request (if enabled)"""
+    if not settings.ENABLE_STARTUP_WARMUP:
+        logger.info("Startup warm-up disabled (set ENABLE_STARTUP_WARMUP=true to enable)")
+        return
+    
     logger.info("Starting application warm-up...")
     
     try:

@@ -38,6 +38,9 @@ class Settings(BaseSettings):
     MAX_QUERY_LENGTH: int = 2000
     MAX_MESSAGE_LENGTH: int = 5000
     
+    # Performance
+    ENABLE_STARTUP_WARMUP: bool = False  # Disable by default to avoid OOM on free-tier deployments
+    
     @property
     def cors_origins(self) -> List[str]:
         """Parse ALLOWED_ORIGINS into a list."""
