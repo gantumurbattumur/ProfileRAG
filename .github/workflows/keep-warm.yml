@@ -2,8 +2,9 @@ name: Keep Render Service Warm
 
 on:
   schedule:
-    # Run every 10 minutes
-    - cron: '*/10 * * * *'
+    # Keep warm 8 AM - 7 PM EST (13:00-00:00 UTC)
+    # Runs every 14 minutes during business hours only
+    - cron: '*/14 13-23 * * *'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
