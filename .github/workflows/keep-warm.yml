@@ -13,7 +13,7 @@ jobs:
       - name: Ping health endpoint
         run: |
           # Replace with your actual Render URL
-          RENDER_URL="${{ secrets.RENDER_URL || 'https://your-app.onrender.com' }}"
+          RENDER_URL="${{ secrets.RENDER_URL || 'https://profilerag-api.onrender.com' }}"
           
           echo "Pinging $RENDER_URL/health..."
           response=$(curl -s -o /dev/null -w "%{http_code}" "$RENDER_URL/health")
