@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import ChatInput from "./components/ChatInput";
 import ActionCards from "./components/ActionCards";
-import ProjectCard from "./components/ProjectCard";
+import ProjectsWithFilter from "./components/ProjectsWithFilter";
 import SkillsCard from "./components/SkillsCard";
 import ExperienceCard from "./components/ExperienceCard";
 import { chat } from "./api";
-import { projects, experience, skills, contact } from "./data/profile";
+import { experience, contact } from "./data/profile";
 
 // Static section keywords
 const SECTION_KEYWORDS = {
@@ -198,10 +198,8 @@ export default function App() {
 
                       {/* Projects cards */}
                       {msg.viewType === "projects" && (
-                        <div className="space-y-3 mt-2">
-                          {projects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
-                          ))}
+                        <div className="mt-2">
+                          <ProjectsWithFilter />
                         </div>
                       )}
 
