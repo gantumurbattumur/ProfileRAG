@@ -8,7 +8,8 @@
     "build": "vite build",
     "test": "node --test src/",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:profile": "node scripts/check-profile.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
