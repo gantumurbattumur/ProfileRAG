@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/profile";
+import { filterProjects } from "../lib/filterProjects";
 
 const ALL = "All";
 
 export default function ProjectsWithFilter() {
   const [activeFilter, setActiveFilter] = useState(ALL);
+  const [query, setQuery] = useState("");
 
   // Newest first; filter options come from the categories actually present in the data.
   const sorted = useMemo(
@@ -19,15 +21,28 @@ export default function ProjectsWithFilter() {
   );
 
   const filtered = useMemo(
-    () =>
-      activeFilter === ALL
-        ? sorted
-        : sorted.filter((p) => p.categories?.includes(activeFilter)),
-    [sorted, activeFilter]
+    () => filterProjects(sorted, { category: activeFilter, query }),
+    [sorted, activeFilter, query]
   );
+
+  const hasQuery = query.trim() !== "";
 
   return (
     <div className="space-y-6">
+      <input
+        type="search"
+        aria-label="Search projects"
+        placeholder="Search projects..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="w-full rounded-full px-4 py-2 text-sm outline-none"
+        style={{
+          backgroundColor: "var(--bg-secondary)",
+          color: "var(--text-primary)",
+          border: "1px solid var(--border)",
+        }}
+      />
+
       <div role="tablist" aria-label="Filter projects" className="flex flex-wrap gap-2">
         {filters.map((filter) => {
           const active = filter === activeFilter;
@@ -61,7 +76,7 @@ export default function ProjectsWithFilter() {
         </div>
       ) : (
         <p className="py-8 text-center" style={{ color: "var(--text-secondary)" }}>
-          No projects in this category.
+          {hasQuery ? "No projects match your search." : "No projects in this category."}
         </p>
       )}
     </div>
