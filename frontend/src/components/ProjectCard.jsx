@@ -1,103 +1,95 @@
-const cardStyle = {
-  backgroundColor: 'white',
-  border: '1px solid var(--border)',
-  borderRadius: '0.75rem',
-  padding: '1rem',
-};
+import { ExternalLink } from "lucide-react";
+
+const MAX_TAGS = 8;
 
 export default function ProjectCard({ project }) {
   const techTags = Array.isArray(project.tech)
     ? project.tech
-    : (project.tech || "").split(",").map(t => t.trim()).filter(Boolean);
+    : (project.tech || "").split(",").map((t) => t.trim()).filter(Boolean);
+
+  const initials = project.title
+    .split(/\s+/)
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
-    <div style={cardStyle}>
-      <div className="flex gap-4 items-start">
-        {/* Image Thumbnail */}
-        <div
-          className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center"
-          style={{ backgroundColor: 'var(--bg-secondary)' }}
-        >
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
+    <article
+      className="flex flex-col overflow-hidden rounded-2xl"
+      style={{
+        backgroundColor: "var(--bg-secondary)",
+        border: "1px solid var(--border)",
+      }}
+    >
+      {/* Preview */}
+      <div
+        className="flex aspect-video w-full items-center justify-center overflow-hidden"
+        style={{ backgroundColor: "var(--bg-primary)" }}
+      >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="text-3xl font-semibold" style={{ color: "var(--accent)" }}>
+            {initials}
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 p-5">
+        <div>
+          <p className="text-xs uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>
+            {project.type} · {project.year}
+          </p>
+          <h3 className="mt-1 text-lg font-semibold" style={{ color: "var(--text-primary)" }}>
+            {project.title}
+          </h3>
+        </div>
+
+        <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+          {project.description}
+        </p>
+
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
+          {techTags.slice(0, MAX_TAGS).map((t) => (
             <span
-              className="font-semibold text-lg"
-              style={{ color: 'var(--accent)' }}
+              key={t}
+              className="rounded px-2 py-0.5 text-xs"
+              style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-secondary)" }}
             >
-              {project.title.substring(0, 2).toUpperCase()}
+              {t}
+            </span>
+          ))}
+          {techTags.length > MAX_TAGS && (
+            <span className="px-2 py-0.5 text-xs" style={{ color: "var(--text-secondary)" }}>
+              +{techTags.length - MAX_TAGS} more
             </span>
           )}
         </div>
 
-        {/* Content */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between gap-2">
-            <div>
-              <h3
-                className="font-semibold"
-                style={{ color: 'var(--text-primary)' }}
+        {project.links?.length > 0 && (
+          <div className="flex flex-wrap gap-4 pt-2">
+            {project.links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium hover:underline"
+                style={{ color: "var(--accent)" }}
               >
-                {project.title}
-              </h3>
-              <p
-                className="text-xs mt-0.5"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                {project.type} • {project.year}
-              </p>
-            </div>
-            <div className="flex gap-2">
-              {project.links && project.links.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-medium hover:underline"
-                  style={{ color: 'var(--accent)' }}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <p
-            className="text-sm mt-2 line-clamp-2"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            {project.description}
-          </p>
-
-          <div className="flex gap-1.5 flex-wrap mt-2">
-            {techTags.slice(0, 6).map((t, idx) => (
-              <span
-                key={idx}
-                className="text-xs px-2 py-0.5 rounded"
-                style={{
-                  backgroundColor: 'var(--bg-secondary)',
-                  color: 'var(--text-secondary)',
-                }}
-              >
-                {t}
-              </span>
+                {link.label}
+                {link.type === "live" && <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />}
+              </a>
             ))}
-            {techTags.length > 6 && (
-              <span
-                className="text-xs px-2 py-0.5"
-                style={{ color: 'var(--text-secondary)' }}
-              >
-                +{techTags.length - 6} more
-              </span>
-            )}
           </div>
-        </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 }
